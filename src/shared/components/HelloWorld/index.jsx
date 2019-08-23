@@ -13,7 +13,7 @@ export default function HelloWorld() {
         Hello World!
       </h1>
       <p>
-        Topcoder React Starter is up!
+        Dr. Pogodin&apos;s React Starter is up!
       </p>
     </div>
   );

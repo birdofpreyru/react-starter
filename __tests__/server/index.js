@@ -2,8 +2,8 @@ jest.mock('shared', () => 'APPLICATION');
 jest.mock('reducers', () => ({ factory: jest.fn(() => () => ({})) }));
 jest.mock('../../webpack.config', () => () => ({}));
 
-jest.mock('topcoder-react-utils', () => {
-  const TRU = require.requireActual('topcoder-react-utils');
+jest.mock('@dr.pogodin/react-utils', () => {
+  const TRU = require.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
     server: jest.fn(),
@@ -12,7 +12,7 @@ jest.mock('topcoder-react-utils', () => {
 
 test('Passes basic tests', () => {
   require('server');
-  const { server } = require('topcoder-react-utils');
+  const { server } = require('@dr.pogodin/react-utils');
   expect(server.mock.calls).toHaveLength(1);
   expect(server.mock.calls[0]).toMatchSnapshot();
   const { beforeRender } = server.mock.calls[0][1];

@@ -15,7 +15,7 @@
  * http://redux.js.org/docs/basics/Reducers.html.
  */
 
-import { redux } from 'topcoder-react-utils';
+import { redux } from '@dr.pogodin/react-utils';
 
 /**
  * @param {Object} req Optional. ExpressJS HTTP request.
