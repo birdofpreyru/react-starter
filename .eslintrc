@@ -1,3 +1,3 @@
 {
-  "extends": "./node_modules/topcoder-react-utils/config/eslint/default.json"
+  "extends": "./node_modules/@dr.pogodin/react-utils/config/eslint/default.json"
 }

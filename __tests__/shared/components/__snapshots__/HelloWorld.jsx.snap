@@ -8,7 +8,7 @@ exports[`Matches shallow snapshot 1`] = `
     Hello World!
   </h1>
   <p>
-    Topcoder React Starter is up!
+    Dr. Pogodin's React Starter is up!
   </p>
 </div>
 `;

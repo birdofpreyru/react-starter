@@ -2,9 +2,9 @@
 
 /* eslint-disable global-require */
 if (process.env.NODE_ENV === 'production') {
-  require('topcoder-react-utils/dist/prod/style.css');
+  require('@dr.pogodin/react-utils/dist/prod/style.css');
 } else {
-  require('topcoder-react-utils/dist/dev/style.css');
+  require('@dr.pogodin/react-utils/dist/dev/style.css');
 }
 /* eslint-enable global-require */
 

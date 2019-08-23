@@ -1,3 +1,3 @@
-# Topcoder ReactJS Starting Pack
+# Dr. Pogodin's ReactJS Starting Pack
 
 *TO BE WRITTEN.*

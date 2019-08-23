@@ -4,7 +4,7 @@
 
 import Application from 'shared';
 import { factory as reducerFactory } from 'reducers';
-import { redux, server as serverFactory } from 'topcoder-react-utils';
+import { redux, server as serverFactory } from '@dr.pogodin/react-utils';
 
 import webpackConfigFactory from '../../webpack.config';
 

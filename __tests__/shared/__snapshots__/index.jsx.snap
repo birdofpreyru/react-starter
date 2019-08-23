@@ -2,9 +2,9 @@
 
 exports[`Matches shallow snapshot 1`] = `
 <div>
-  <Connect(MetaTags)
-    description="Yet another webapp based on Topcoder React Starter Kit"
-    title="Topcoder React Starter"
+  <Memo(Connect(MetaTags))
+    description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    title="Dr. Pogodin's React Starter"
   />
   <Routes />
 </div>
@@ -12,9 +12,9 @@ exports[`Matches shallow snapshot 1`] = `
 
 exports[`Matches shallow snapshot in dev mode 1`] = `
 <div>
-  <Connect(MetaTags)
-    description="Yet another webapp based on Topcoder React Starter Kit"
-    title="Topcoder React Starter"
+  <Memo(Connect(MetaTags))
+    description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    title="Dr. Pogodin's React Starter"
   />
   <Routes />
   <DevTools />

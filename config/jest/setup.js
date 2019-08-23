@@ -1,1 +1,1 @@
-import 'topcoder-react-utils/config/jest/setup';
+import '@dr.pogodin/react-utils/config/jest/setup';

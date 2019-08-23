@@ -1,6 +1,6 @@
 const path = require('path');
 const standardConfigFactory = require(
-  'topcoder-react-utils/config/webpack/app-development',
+  '@dr.pogodin/react-utils/config/webpack/app-development',
 );
 const webpackMerge = require('webpack-merge');
 

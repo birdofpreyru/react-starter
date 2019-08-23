@@ -8,8 +8,8 @@ jest.mock('reducers', () => ({
   factory: () => () => ({}),
 }));
 
-jest.mock('topcoder-react-utils', () => {
-  const TRU = require.requireActual('topcoder-react-utils');
+jest.mock('@dr.pogodin/react-utils', () => {
+  const TRU = require.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
     client: jest.fn(),
@@ -18,7 +18,7 @@ jest.mock('topcoder-react-utils', () => {
 
 test('Passes basic testing', () => {
   require('client');
-  const { client } = require('topcoder-react-utils');
+  const { client } = require('@dr.pogodin/react-utils');
 
   const ops = client.mock.calls[0][0];
   expect(_.omit(ops, 'applicationModulePath')).toMatchSnapshot();

@@ -13,7 +13,7 @@ describe('Reducer created without HTTP request', () => {
 });
 
 
-describe('Reducer created with HTTP request', async () => {
+describe('Reducer created with HTTP request', () => {
   let reducer;
 
   beforeAll(async () => {
