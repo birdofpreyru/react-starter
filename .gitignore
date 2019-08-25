@@ -47,4 +47,5 @@ jspm_packages
 
 # Misc files
 .build-info
+.build-webpack-config.json
 .vscode
