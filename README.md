@@ -1,7 +1,6 @@
 # Dr. Pogodin's React Starting Pack
-![Master build status](https://img.shields.io/circleci/project/github/birdofpreyru/dr-pogodin-react-starter/master.svg)
-![GitHub Release Downloads](https://img.shields.io/github/downloads/birdofpreyru/dr-pogodin-react-starter/total.svg)
-![Release Version](https://img.shields.io/github/tag/birdofpreyru/dr-pogodin-react-starter.svg)
+![Master build status](https://img.shields.io/circleci/project/github/birdofpreyru/react-starter/master.svg)
+![Release Version](https://img.shields.io/github/tag/birdofpreyru/react-starter.svg)
 
 The easiest way to start a complex ReactJS project based on
 [`@dr.pogodin/react-utils`](https://www.npmjs.com/package/@dr.pogodin/react-utils).
