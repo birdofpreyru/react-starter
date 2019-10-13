@@ -9,7 +9,7 @@ import './style.scss';
 export default function HelloWorld() {
   return (
     <div>
-      <h1 styleName="title">
+      <h1 data-tip="Tooltip Example" styleName="title">
         Hello World!
       </h1>
       <p>

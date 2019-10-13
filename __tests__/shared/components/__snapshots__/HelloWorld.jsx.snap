@@ -4,6 +4,7 @@ exports[`Matches shallow snapshot 1`] = `
 <div>
   <h1
     className="src-shared-components-HelloWorld-___style__title___UXPoT"
+    data-tip="Tooltip Example"
   >
     Hello World!
   </h1>
