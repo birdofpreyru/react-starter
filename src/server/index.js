@@ -9,7 +9,7 @@ import Application from 'shared';
 import { factory as reducerFactory } from 'reducers';
 import { redux, server as serverFactory } from '@dr.pogodin/react-utils';
 
-const mode = process.env.BABEL_ENV;
+const mode = process.env.NODE_ENV;
 
 /* TODO: A quick workaround to pass build-time webpack config at the startup
  * of production build, without depedencies on development stuff. A more
