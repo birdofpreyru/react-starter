@@ -9,7 +9,7 @@ import Application from 'shared';
 import { factory as reducerFactory } from 'reducers';
 import { redux, server as serverFactory } from '@dr.pogodin/react-utils';
 
-const mode = process.env.BABEL_ENV;
+const mode = process.env.NODE_ENV;
 
 /* TODO: A quick workaround to pass build-time webpack config at the startup
  * of production build, without depedencies on development stuff. A more
@@ -37,4 +37,18 @@ serverFactory(webpackConfig, {
   Application,
   beforeRender,
   devMode: mode === 'development',
+
+  /* Example of adding custom routes to the server. */
+  onExpressJsSetup: (server) => {
+    /* This sample & test endpoint replies back with headers, query,
+     * and request body, received from the caller. */
+    server.use('/__api__/example', (req, res) => {
+      res.json({
+        method: req.method,
+        headers: req.headers,
+        query: req.query,
+        body: req.body,
+      });
+    });
+  },
 });

@@ -8,7 +8,7 @@ describe('Reducer created without HTTP request', () => {
   });
 
   test('Creates expected initial state', () => {
-    expect(reducer()).toMatchSnapshot();
+    expect(reducer(undefined, '@@INIT')).toMatchSnapshot();
   });
 });
 
@@ -27,6 +27,6 @@ describe('Reducer created with HTTP request', () => {
   });
 
   test('Creates expected initial state', () => {
-    expect(reducer()).toMatchSnapshot();
+    expect(reducer(undefined, '@@INIT')).toMatchSnapshot();
   });
 });
