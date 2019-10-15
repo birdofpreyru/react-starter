@@ -6,6 +6,12 @@ exports[`Matches shallow snapshot 1`] = `
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
     title="Dr. Pogodin's React Starter"
   />
+  <ReactTooltip
+    clickable={false}
+    insecure={true}
+    resizeHide={true}
+    wrapper="div"
+  />
   <Routes />
 </div>
 `;
@@ -15,6 +21,12 @@ exports[`Matches shallow snapshot in dev mode 1`] = `
   <Memo(Connect(MetaTags))
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
     title="Dr. Pogodin's React Starter"
+  />
+  <ReactTooltip
+    clickable={false}
+    insecure={true}
+    resizeHide={true}
+    wrapper="div"
   />
   <Routes />
   <DevTools />

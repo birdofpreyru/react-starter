@@ -12,7 +12,6 @@ const standardProductionConfig = standardConfigFactory({
     main: './src/client',
   },
   keepBuildInfo: Boolean(global.KEEP_BUILD_INFO),
-  outputPath: 'build/webpack',
 });
 
 module.exports = webpackMerge.smart(
