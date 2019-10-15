@@ -37,4 +37,18 @@ serverFactory(webpackConfig, {
   Application,
   beforeRender,
   devMode: mode === 'development',
+
+  /* Example of adding custom routes to the server. */
+  onExpressJsSetup: (server) => {
+    /* This sample & test endpoint replies back with headers, query,
+     * and request body, received from the caller. */
+    server.use('/__api__/example', (req, res) => {
+      res.json({
+        method: req.method,
+        headers: req.headers,
+        query: req.query,
+        body: req.body,
+      });
+    });
+  },
 });

@@ -35,8 +35,10 @@
   "homepage": "https://github.com/birdofpreyru/react-starter#readme",
   "dependencies": {
     "@dr.pogodin/react-utils": "file:../react-utils/dr.pogodin-react-utils-0.11.0.tgz",
+    "axios": "^0.19.0",
     "cross-env": "^6.0.3",
     "lodash": "^4.17.15",
+    "prop-types": "^15.7.2",
     "raf": "^3.4.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
