@@ -11,7 +11,7 @@ import ExampleRoutes from './examples';
 export default function Routes() {
   return (
     <Switch>
-      <Route component={ExampleRoutes} path="/ex" />
+      <Route component={ExampleRoutes} path="/" />
       <Error404Page />
     </Switch>
   );

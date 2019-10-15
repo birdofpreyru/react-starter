@@ -1,3 +1,4 @@
 {
   "extends": "./node_modules/@dr.pogodin/react-utils/config/stylelint/default.json",
+  "ignoreFiles":"./build/**/*"
 }

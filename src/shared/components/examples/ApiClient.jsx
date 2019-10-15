@@ -4,10 +4,13 @@
  * [axios](https://www.npmjs.com/package/axios) library.
  */
 
-import _ from 'lodash';
 import React, { useState, useEffect } from 'react';
-import PT from 'prop-types';
-import { api, Link, url } from '@dr.pogodin/react-utils';
+import {
+  api,
+  Link,
+  PT,
+  url,
+} from '@dr.pogodin/react-utils';
 
 export default function ApiClient({ match }) {
   const [data, setData] = useState({});

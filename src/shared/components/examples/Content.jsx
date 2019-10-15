@@ -4,8 +4,7 @@
 
 import _ from 'lodash';
 import React from 'react';
-import PT from 'prop-types';
-import { Link } from '@dr.pogodin/react-utils';
+import { Link, PT } from '@dr.pogodin/react-utils';
 
 export default function Content({ match }) {
   const path = _.trimEnd(match.url, '/');
@@ -14,6 +13,11 @@ export default function Content({ match }) {
       <h1>Dr. Pogodin&apos;s React Starter</h1>
       <ul>
         <li><Link to={`${path}/api-client`}>API (HTTP) Client</Link></li>
+        <li>
+          <Link to={`${path}/throbber`}>
+            Throbber (Activity Indicator)
+          </Link>
+        </li>
       </ul>
     </div>
   );
