@@ -13,6 +13,7 @@ export default function Content({ match }) {
       <h1>Dr. Pogodin&apos;s React Starter</h1>
       <ul>
         <li><Link to={`${path}/api-client`}>API (HTTP) Client</Link></li>
+        <li><Link to={`${path}/react-themes`}>React Themes</Link></li>
         <li>
           <Link to={`${path}/throbber`}>
             Throbber (Activity Indicator)

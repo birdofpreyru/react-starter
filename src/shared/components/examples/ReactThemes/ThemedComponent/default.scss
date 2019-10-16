@@ -1,0 +1,21 @@
+/**
+ * Default theme.
+ */
+
+.container {
+  height: 60px;
+  background: red;
+  display: inline-flex;
+  align-items: center;
+  margin: 5px;
+  padding: 15px;
+  justify-content: center;
+}
+
+.content {
+  height: 30px;
+  background: green;
+  color: white;
+  text-align: center;
+  padding: 0 10px;
+}
