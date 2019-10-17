@@ -1,3 +1,7 @@
-.content {
-  background: purple;
+.ad.hoc,
+*,
+.context {
+  &.content {
+    background: purple;
+  }
 }

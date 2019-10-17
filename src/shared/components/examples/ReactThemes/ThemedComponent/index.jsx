@@ -2,7 +2,7 @@ import React from 'react';
 
 import { PT } from '@dr.pogodin/react-utils';
 
-import themed from '@dr.pogodin/react-themes';
+import themed, { COMPOSE, PRIORITY } from '@dr.pogodin/react-themes';
 
 import defaultTheme from './default.scss';
 
