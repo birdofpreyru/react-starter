@@ -34,6 +34,7 @@
   },
   "homepage": "https://github.com/birdofpreyru/react-starter#readme",
   "dependencies": {
+    "@dr.pogodin/react-themes": "file:../react-themes/dr.pogodin-react-themes-1.0.0.tgz",
     "@dr.pogodin/react-utils": "^0.11.0",
     "axios": "^0.19.0",
     "cross-env": "^6.0.3",
