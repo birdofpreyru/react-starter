@@ -3,20 +3,13 @@ import React from 'react';
 import {
   Link,
   PT,
+  themed,
+  ThemeProvider,
   url,
 } from '@dr.pogodin/react-utils';
 
-import {
-  COMPATIBILITY_MODE,
-  COMPOSE,
-  PRIORITY,
-  ThemeProvider,
-  setCompatibilityMode,
-} from '@dr.pogodin/react-themes';
-
 import ThemedComponent from './ThemedComponent';
 
-import defaultTheme from './ThemedComponent/default.scss';
 import contextTheme from './ThemedComponent/context.scss';
 import adhocTheme from './ThemedComponent/adhoc.scss';
 
@@ -44,11 +37,11 @@ export default function ReactThemes({ match }) {
       <ThemeProvider theme={{ ThemedComponent: contextTheme }}>
         <ThemedComponent
           label="Green"
-          themePriority={PRIORITY.ADHOC_DEFAULT_CONTEXT}
+          themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
         />
         <ThemedComponent
           label="Purple"
-          themePriority={PRIORITY.ADHOC_DEFAULT_CONTEXT}
+          themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
           theme={adhocTheme}
         />
       </ThemeProvider>

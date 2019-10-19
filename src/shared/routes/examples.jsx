@@ -2,10 +2,10 @@
  * Example routes.
  */
 
-import _ from 'lodash';
 import React from 'react';
 
-import PT from 'prop-types';
+import { _, PT } from '@dr.pogodin/react-utils';
+
 import { Route, Switch } from 'react-router-dom';
 
 import Content from 'components/examples/Content';

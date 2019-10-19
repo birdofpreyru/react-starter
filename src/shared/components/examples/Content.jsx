@@ -2,9 +2,8 @@
  * The list of examples included into the starter pack.
  */
 
-import _ from 'lodash';
 import React from 'react';
-import { Link, PT } from '@dr.pogodin/react-utils';
+import { _, Link, PT } from '@dr.pogodin/react-utils';
 
 export default function Content({ match }) {
   const path = _.trimEnd(match.url, '/');

@@ -1,8 +1,6 @@
 import React from 'react';
 
-import { PT } from '@dr.pogodin/react-utils';
-
-import themed, { COMPOSE, PRIORITY } from '@dr.pogodin/react-themes';
+import { PT, themed } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';
 
