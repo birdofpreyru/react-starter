@@ -3,23 +3,30 @@
  */
 
 import React from 'react';
-import { _, Link, PT } from '@dr.pogodin/react-utils';
+import {
+  _,
+  Link,
+  PageLayout,
+  PT,
+} from '@dr.pogodin/react-utils';
 
 export default function Content({ match }) {
   const path = _.trimEnd(match.url, '/');
   return (
-    <div>
+    <PageLayout>
       <h1>Dr. Pogodin&apos;s React Starter</h1>
       <ul>
-        <li><Link to={`${path}/api-client`}>API (HTTP) Client</Link></li>
-        <li><Link to={`${path}/react-themes`}>React Themes</Link></li>
+        <li><Link to={`${path}/api-client`}>API (HTTP) client</Link></li>
+        <li><Link to={`${path}/buttons`}>Buttons</Link></li>
+        <li><Link to={`${path}/page-layout`}>Page layout</Link></li>
+        <li><Link to={`${path}/react-themes`}>React themes</Link></li>
         <li>
           <Link to={`${path}/throbber`}>
-            Throbber (Activity Indicator)
+            Throbber (activity indicator)
           </Link>
         </li>
       </ul>
-    </div>
+    </PageLayout>
   );
 }
 

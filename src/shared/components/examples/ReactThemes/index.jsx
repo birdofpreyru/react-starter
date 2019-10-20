@@ -2,50 +2,51 @@ import React from 'react';
 
 import {
   Link,
+  PageLayout,
   PT,
   themed,
   ThemeProvider,
   url,
 } from '@dr.pogodin/react-utils';
 
-import ThemedComponent from './ThemedComponent';
+import ThemedComponentOLD from './ThemedComponentOLD';
 
-import contextTheme from './ThemedComponent/context.scss';
-import adhocTheme from './ThemedComponent/adhoc.scss';
+import contextTheme from './ThemedComponentOLD/context.scss';
+import adhocTheme from './ThemedComponentOLD/adhoc.scss';
 
 export default function ReactThemes({ match }) {
   return (
-    <div>
+    <PageLayout>
       <Link to={url.parent(match.url)}>&lArr; Content</Link>
       <h1>React Themes</h1>
-      <ThemedComponent label="Green" />
-      <ThemedComponent label="Blue" theme={contextTheme} />
-      <ThemedComponent label="Purple" theme={adhocTheme} />
+      <ThemedComponentOLD label="Green" />
+      <ThemedComponentOLD label="Blue" theme={contextTheme} />
+      <ThemedComponentOLD label="Purple" theme={adhocTheme} />
       <br />
-      <ThemeProvider theme={{ ThemedComponent: contextTheme }}>
-        <ThemedComponent label="Blue" />
-        <ThemedComponent label="Purple" theme={adhocTheme} />
+      <ThemeProvider themes={{ ThemedComponent: contextTheme }}>
+        <ThemedComponentOLD label="Blue" />
+        <ThemedComponentOLD label="Purple" theme={adhocTheme} />
       </ThemeProvider>
       <br />
-      <ThemeProvider theme={{ ThemedComponent: adhocTheme }}>
-        <ThemeProvider theme={{ ThemedComponent: contextTheme }}>
-          <ThemedComponent label="Blue" />
-          <ThemedComponent label="Purple" theme={adhocTheme} />
+      <ThemeProvider themes={{ ThemedComponent: adhocTheme }}>
+        <ThemeProvider themes={{ ThemedComponent: contextTheme }}>
+          <ThemedComponentOLD label="Blue" />
+          <ThemedComponentOLD label="Purple" theme={adhocTheme} />
         </ThemeProvider>
       </ThemeProvider>
       <br />
-      <ThemeProvider theme={{ ThemedComponent: contextTheme }}>
-        <ThemedComponent
+      <ThemeProvider themes={{ ThemedComponent: contextTheme }}>
+        <ThemedComponentOLD
           label="Green"
           themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
         />
-        <ThemedComponent
+        <ThemedComponentOLD
           label="Purple"
           themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
           theme={adhocTheme}
         />
       </ThemeProvider>
-    </div>
+    </PageLayout>
   );
 }
 

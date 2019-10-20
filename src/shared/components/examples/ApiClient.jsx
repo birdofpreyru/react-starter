@@ -8,6 +8,7 @@ import React, { useState, useEffect } from 'react';
 import {
   api,
   Link,
+  PageLayout,
   PT,
   url,
 } from '@dr.pogodin/react-utils';
@@ -34,7 +35,7 @@ export default function ApiClient({ match }) {
   });
 
   return (
-    <div>
+    <PageLayout>
       <Link to={url.parent(match.url)}>&lArr; Content</Link>
       <h1>API (HTTP) Client</h1>
       <ul>
@@ -45,7 +46,7 @@ export default function ApiClient({ match }) {
       <pre>{ data.get }</pre>
       <h3 id="post-test">POST Test</h3>
       <pre>{ data.post }</pre>
-    </div>
+    </PageLayout>
   );
 }
 

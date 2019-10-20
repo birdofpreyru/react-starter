@@ -8,8 +8,10 @@ import { _, PT } from '@dr.pogodin/react-utils';
 
 import { Route, Switch } from 'react-router-dom';
 
+import Buttons from 'components/examples/Buttons';
 import Content from 'components/examples/Content';
 import ApiClient from 'components/examples/ApiClient';
+import PageLayout from 'components/examples/PageLayout';
 import ReactThemes from 'components/examples/ReactThemes';
 import Throbber from 'components/examples/Throbber';
 import Error404 from 'components/Error404Page';
@@ -20,6 +22,8 @@ export default function Routes({ match }) {
     <Switch>
       <Route component={Content} exact path={path || '/'} />
       <Route component={ApiClient} exact path={`${path}/api-client`} />
+      <Route component={Buttons} exact path={`${path}/buttons`} />
+      <Route component={PageLayout} exact path={`${path}/page-layout`} />
       <Route component={ReactThemes} exact path={`${path}/react-themes`} />
       <Route component={Throbber} exact path={`${path}/throbber`} />
       <Error404 />
