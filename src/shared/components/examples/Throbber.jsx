@@ -6,6 +6,7 @@ import React from 'react';
 
 import {
   Link,
+  PageLayout,
   PT,
   Throbber,
   url,
@@ -13,11 +14,12 @@ import {
 
 export default function WaitingIcon({ match }) {
   return (
-    <div>
+    <PageLayout>
       <Link to={url.parent(match.url)}>&lArr; Content</Link>
       <h1>Throbber (Activity Indicator)</h1>
+      <br />
       <Throbber />
-    </div>
+    </PageLayout>
   );
 }
 

@@ -1,0 +1,32 @@
+/**
+ * Adds special coloring of the layout, to ease its description in the demo.
+ */
+
+@import "~styles/mixins";
+
+*,
+.content,
+.ad.hoc {
+  &.container {
+    border: 6px solid red;
+  }
+
+  &.mainPanel {
+    border: 6px solid black;
+    margin: 3px;
+  }
+
+  &.leftSidePanel {
+    @include lg-to-xl {
+      border: 6px solid green;
+      margin: 3px;
+    }
+  }
+
+  &.rightSidePanel {
+    @include lg-to-xl {
+      border: 6px solid blue;
+      margin: 3px;
+    }
+  }
+}

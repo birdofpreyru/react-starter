@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { _ } from '@dr.pogodin/react-utils';
 
 jest.mock('shared', () => ({
   default: 'APPLICATION',
