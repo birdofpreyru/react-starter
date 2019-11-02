@@ -17,7 +17,13 @@ export default function Content({ match }) {
       <h1>Dr. Pogodin&apos;s React Starter</h1>
       <ul>
         <li><Link to={`${path}/api-client`}>API (HTTP) client</Link></li>
+        <li>
+          <Link to={`${path}/async-global-data`}>
+            Async Global Data
+          </Link>
+        </li>
         <li><Link to={`${path}/buttons`}>Buttons</Link></li>
+        <li><Link to={`${path}/global-state`}>Global State</Link></li>
         <li><Link to={`${path}/page-layout`}>Page layout</Link></li>
         <li><Link to={`${path}/react-themes`}>React themes</Link></li>
         <li>
