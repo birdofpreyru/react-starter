@@ -11,6 +11,8 @@ import { Route, Switch } from 'react-router-dom';
 import Buttons from 'components/examples/Buttons';
 import Content from 'components/examples/Content';
 import ApiClient from 'components/examples/ApiClient';
+import AsyncGlobalData from 'components/examples/AsyncGlobalData';
+import GlobalState from 'components/examples/GlobalState';
 import PageLayout from 'components/examples/PageLayout';
 import ReactThemes from 'components/examples/ReactThemes';
 import Throbber from 'components/examples/Throbber';
@@ -22,7 +24,13 @@ export default function Routes({ match }) {
     <Switch>
       <Route component={Content} exact path={path || '/'} />
       <Route component={ApiClient} exact path={`${path}/api-client`} />
+      <Route
+        component={AsyncGlobalData}
+        exact
+        path={`${path}/async-global-data`}
+      />
       <Route component={Buttons} exact path={`${path}/buttons`} />
+      <Route component={GlobalState} exact path={`${path}/global-state`} />
       <Route component={PageLayout} exact path={`${path}/page-layout`} />
       <Route component={ReactThemes} exact path={`${path}/react-themes`} />
       <Route component={Throbber} exact path={`${path}/throbber`} />

@@ -7,6 +7,7 @@ import Routes from 'routes';
 
 import {
   DevTools,
+  GlobalStateProvider,
   MetaTags,
   isomorphy,
   Tooltip,
@@ -14,7 +15,7 @@ import {
 
 export default function Application() {
   return (
-    <div>
+    <GlobalStateProvider>
       <MetaTags
         title="Dr. Pogodin's React Starter"
         description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
@@ -22,6 +23,6 @@ export default function Application() {
       <Tooltip />
       <Routes />
       { isomorphy.isDevBuild() ? <DevTools /> : undefined }
-    </div>
+    </GlobalStateProvider>
   );
 }
