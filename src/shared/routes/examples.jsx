@@ -15,6 +15,7 @@ import AsyncGlobalData from 'components/examples/AsyncGlobalData';
 import GlobalState from 'components/examples/GlobalState';
 import PageLayout from 'components/examples/PageLayout';
 import ReactThemes from 'components/examples/ReactThemes';
+import Svg from 'components/examples/Svg';
 import Throbber from 'components/examples/Throbber';
 import Error404 from 'components/Error404Page';
 
@@ -33,6 +34,7 @@ export default function Routes({ match }) {
       <Route component={GlobalState} exact path={`${path}/global-state`} />
       <Route component={PageLayout} exact path={`${path}/page-layout`} />
       <Route component={ReactThemes} exact path={`${path}/react-themes`} />
+      <Route component={Svg} exact path={`${path}/svg`} />
       <Route component={Throbber} exact path={`${path}/throbber`} />
       <Error404 />
     </Switch>

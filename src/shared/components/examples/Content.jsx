@@ -26,6 +26,7 @@ export default function Content({ match }) {
         <li><Link to={`${path}/global-state`}>Global State</Link></li>
         <li><Link to={`${path}/page-layout`}>Page layout</Link></li>
         <li><Link to={`${path}/react-themes`}>React themes</Link></li>
+        <li><Link to={`${path}/svg`}>SVG Demo</Link></li>
         <li>
           <Link to={`${path}/throbber`}>
             Throbber (activity indicator)
