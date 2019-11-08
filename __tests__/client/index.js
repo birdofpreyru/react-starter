@@ -4,10 +4,6 @@ jest.mock('shared', () => ({
   default: 'APPLICATION',
 }));
 
-jest.mock('reducers', () => ({
-  factory: () => () => ({}),
-}));
-
 jest.mock('@dr.pogodin/react-utils', () => {
   const TRU = require.requireActual('@dr.pogodin/react-utils');
   return {
@@ -27,6 +23,4 @@ test('Passes basic testing', () => {
     .toBe(true);
 
   expect(ops.getApplication()).toBe('APPLICATION');
-
-  expect(ops.storeFactory()).toBeInstanceOf(Promise);
 });

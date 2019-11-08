@@ -2,9 +2,14 @@
 
 exports[`Matches shallow snapshot 1`] = `
 <GlobalStateProvider>
-  <Memo(Connect(MetaTags))
+  <MetaTags
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    image={null}
+    siteName={null}
+    socialDescription={null}
+    socialTitle={null}
     title="Dr. Pogodin's React Starter"
+    url={null}
   />
   <ReactTooltip
     clickable={false}
@@ -18,9 +23,14 @@ exports[`Matches shallow snapshot 1`] = `
 
 exports[`Matches shallow snapshot in dev mode 1`] = `
 <GlobalStateProvider>
-  <Memo(Connect(MetaTags))
+  <MetaTags
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    image={null}
+    siteName={null}
+    socialDescription={null}
+    socialTitle={null}
     title="Dr. Pogodin's React Starter"
+    url={null}
   />
   <ReactTooltip
     clickable={false}
@@ -29,6 +39,5 @@ exports[`Matches shallow snapshot in dev mode 1`] = `
     wrapper="div"
   />
   <Routes />
-  <DevTools />
 </GlobalStateProvider>
 `;
