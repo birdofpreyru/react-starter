@@ -24,10 +24,6 @@ if (mode === 'production') {
 }
 
 async function beforeRender(req) {
-  console.log(
-    'BEFORE RENDER',
-    `${req.protocol}://${req.headers.host || req.hostname}`,
-  );
   return {
     initialState: {
       domain: `${req.protocol}://${req.headers.host || req.hostname}`,
