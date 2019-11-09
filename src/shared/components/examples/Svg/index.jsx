@@ -10,7 +10,7 @@ import {
   url,
 } from '@dr.pogodin/react-utils';
 
-import { ReactComponent as Logo } from './logo.svg';
+import Logo from './logo.svg';
 
 export default function Svg({ match }) {
   return (

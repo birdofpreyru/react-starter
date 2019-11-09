@@ -1,9 +1,0 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
-
-exports[`Reducer created with HTTP request Creates expected initial state 1`] = `
-Object {
-  "domain": "http://test-website.com",
-}
-`;
-
-exports[`Reducer created without HTTP request Creates expected initial state 1`] = `Object {}`;

@@ -4,6 +4,5 @@ exports[`Passes basic testing 1`] = `
 Object {
   "getApplication": [Function],
   "moduleHot": undefined,
-  "storeFactory": [Function],
 }
 `;

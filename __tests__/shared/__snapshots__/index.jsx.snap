@@ -1,10 +1,15 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Matches shallow snapshot 1`] = `
-<GlobalStateProvider>
-  <Memo(Connect(MetaTags))
+<React.Fragment>
+  <MetaTags
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    image={null}
+    siteName={null}
+    socialDescription={null}
+    socialTitle={null}
     title="Dr. Pogodin's React Starter"
+    url={null}
   />
   <ReactTooltip
     clickable={false}
@@ -13,14 +18,19 @@ exports[`Matches shallow snapshot 1`] = `
     wrapper="div"
   />
   <Routes />
-</GlobalStateProvider>
+</React.Fragment>
 `;
 
 exports[`Matches shallow snapshot in dev mode 1`] = `
-<GlobalStateProvider>
-  <Memo(Connect(MetaTags))
+<React.Fragment>
+  <MetaTags
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    image={null}
+    siteName={null}
+    socialDescription={null}
+    socialTitle={null}
     title="Dr. Pogodin's React Starter"
+    url={null}
   />
   <ReactTooltip
     clickable={false}
@@ -29,6 +39,5 @@ exports[`Matches shallow snapshot in dev mode 1`] = `
     wrapper="div"
   />
   <Routes />
-  <DevTools />
-</GlobalStateProvider>
+</React.Fragment>
 `;

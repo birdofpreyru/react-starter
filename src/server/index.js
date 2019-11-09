@@ -6,8 +6,7 @@ import fs from 'fs';
 import path from 'path';
 
 import Application from 'shared';
-import { factory as reducerFactory } from 'reducers';
-import { redux, server as serverFactory } from '@dr.pogodin/react-utils';
+import { server as serverFactory } from '@dr.pogodin/react-utils';
 
 const mode = process.env.NODE_ENV;
 
@@ -25,11 +24,11 @@ if (mode === 'production') {
 }
 
 async function beforeRender(req) {
-  const store = await redux.storeFactory({
-    getReducerFactory: () => reducerFactory,
-    httpRequest: req,
-  });
-  return { store };
+  return {
+    initialState: {
+      domain: `${req.protocol}://${req.headers.host || req.hostname}`,
+    },
+  };
 }
 
 global.KEEP_BUILD_INFO = true;
