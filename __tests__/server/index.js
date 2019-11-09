@@ -1,5 +1,4 @@
 jest.mock('shared', () => 'APPLICATION');
-jest.mock('reducers', () => ({ factory: jest.fn(() => () => ({})) }));
 jest.mock('../../webpack.config', () => () => ({}));
 
 jest.mock('@dr.pogodin/react-utils', () => {
