@@ -13,6 +13,7 @@ import Content from 'components/examples/Content';
 import ApiClient from 'components/examples/ApiClient';
 import AsyncGlobalData from 'components/examples/AsyncGlobalData';
 import GlobalState from 'components/examples/GlobalState';
+import ModalExample from 'components/examples/Modal';
 import PageLayout from 'components/examples/PageLayout';
 import ReactThemes from 'components/examples/ReactThemes';
 import Svg from 'components/examples/Svg';
@@ -32,6 +33,7 @@ export default function Routes({ match }) {
       />
       <Route component={Buttons} exact path={`${path}/buttons`} />
       <Route component={GlobalState} exact path={`${path}/global-state`} />
+      <Route component={ModalExample} exact path={`${path}/modal`} />
       <Route component={PageLayout} exact path={`${path}/page-layout`} />
       <Route component={ReactThemes} exact path={`${path}/react-themes`} />
       <Route component={Svg} exact path={`${path}/svg`} />
