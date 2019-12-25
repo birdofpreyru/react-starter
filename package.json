@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/birdofpreyru/react-starter#readme",
   "dependencies": {
-    "@dr.pogodin/react-utils": "^0.15.1",
+    "@dr.pogodin/react-utils": "^0.15.2",
     "cross-env": "^6.0.3",
     "react": "^16.12.0",
     "react-router-dom": "^5.1.2",
