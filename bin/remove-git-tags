@@ -1,0 +1,5 @@
+#!/bin/bash
+
+# Removes all tags from the local copy of Git repo.
+
+git tag | xargs git tag -d
