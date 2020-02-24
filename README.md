@@ -1,4 +1,4 @@
-# Dr. Pogodin's React Starting Pack
+# React Starting Pack
 ![Master build status](https://img.shields.io/circleci/project/github/birdofpreyru/react-starter/master.svg)
 ![Release Version](https://img.shields.io/github/tag/birdofpreyru/react-starter.svg)
 
