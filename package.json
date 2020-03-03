@@ -38,7 +38,7 @@
     "npm": "^6.13.4"
   },
   "dependencies": {
-    "@dr.pogodin/react-utils": "^0.18.1",
+    "@dr.pogodin/react-utils": "^0.18.3",
     "cross-env": "^7.0.0",
     "react": "^16.13.0",
     "react-router-dom": "^5.1.2",
