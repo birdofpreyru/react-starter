@@ -1,4 +1,4 @@
-import Error404Page from 'components/Error404Page';
+import Error404Page from 'pages/Error404';
 import React from 'react';
 import { JU } from '@dr.pogodin/react-utils';
 
