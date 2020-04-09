@@ -8,17 +8,17 @@ import { _, PT } from '@dr.pogodin/react-utils';
 
 import { Route, Switch } from 'react-router-dom';
 
-import Buttons from 'components/examples/Buttons';
-import Content from 'components/examples/Content';
-import ApiClient from 'components/examples/ApiClient';
-import AsyncGlobalData from 'components/examples/AsyncGlobalData';
-import GlobalState from 'components/examples/GlobalState';
-import ModalExample from 'components/examples/Modal';
-import PageLayout from 'components/examples/PageLayout';
-import ReactThemes from 'components/examples/ReactThemes';
-import Svg from 'components/examples/Svg';
-import Throbber from 'components/examples/Throbber';
-import Error404 from 'components/Error404Page';
+import Buttons from 'pages/examples/Buttons';
+import Content from 'pages/examples/Content';
+import ApiClient from 'pages/examples/ApiClient';
+import AsyncGlobalData from 'pages/examples/AsyncGlobalData';
+import GlobalState from 'pages/examples/GlobalState';
+import ModalExample from 'pages/examples/Modal';
+import PageLayout from 'pages/examples/PageLayout';
+import ReactThemes from 'pages/examples/ReactThemes';
+import Svg from 'pages/examples/Svg';
+import Throbber from 'pages/examples/Throbber';
+import Error404 from 'pages/Error404';
 
 export default function Routes({ match }) {
   const path = _.trimEnd(match.path, '/');

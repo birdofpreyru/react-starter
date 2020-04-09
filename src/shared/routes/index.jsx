@@ -10,7 +10,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import { CodeSplit, Throbber, webpack } from '@dr.pogodin/react-utils';
 
-import Error404Page from 'components/Error404Page';
+import Error404 from 'pages/Error404';
 
 function Examples(props) {
   return (
@@ -35,7 +35,7 @@ export default function Routes() {
   return (
     <Switch>
       <Route path="/" component={Examples} />
-      <Error404Page />
+      <Error404 />
     </Switch>
   );
 }
