@@ -33,6 +33,11 @@ export default function Content({ match }) {
             Throbber (activity indicator)
           </Link>
         </li>
+        <li>
+          <Link to={`${path}/tooltip`}>
+            Tooltip
+          </Link>
+        </li>
       </ul>
     </PageLayout>
   );

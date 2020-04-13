@@ -5,10 +5,7 @@
 import React from 'react';
 import Routes from 'routes';
 
-import {
-  MetaTags,
-  Tooltip,
-} from '@dr.pogodin/react-utils';
+import { MetaTags } from '@dr.pogodin/react-utils';
 
 export default function Application() {
   return (
@@ -17,7 +14,6 @@ export default function Application() {
         title="Dr. Pogodin's React Starter"
         description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
       />
-      <Tooltip />
       <Routes />
     </>
   );

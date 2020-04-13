@@ -11,12 +11,6 @@ exports[`Matches shallow snapshot 1`] = `
     title="Dr. Pogodin's React Starter"
     url={null}
   />
-  <ReactTooltip
-    clickable={false}
-    insecure={true}
-    resizeHide={true}
-    wrapper="div"
-  />
   <Routes />
 </React.Fragment>
 `;
@@ -31,12 +25,6 @@ exports[`Matches shallow snapshot in dev mode 1`] = `
     socialTitle={null}
     title="Dr. Pogodin's React Starter"
     url={null}
-  />
-  <ReactTooltip
-    clickable={false}
-    insecure={true}
-    resizeHide={true}
-    wrapper="div"
   />
   <Routes />
 </React.Fragment>

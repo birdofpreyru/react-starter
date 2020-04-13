@@ -38,7 +38,7 @@
     "npm": "^6.13.4"
   },
   "dependencies": {
-    "@dr.pogodin/react-utils": "^0.18.10",
+    "@dr.pogodin/react-utils": "^0.19.0",
     "cross-env": "^7.0.2",
     "react": "^16.13.1",
     "react-router-dom": "^5.1.2",
@@ -89,7 +89,7 @@
     "regenerator-runtime": "^0.13.5",
     "resolve-url-loader": "^3.1.1",
     "sass-loader": "^8.0.2",
-    "stylelint": "^13.3.1",
+    "stylelint": "^13.3.2",
     "stylelint-config-standard": "^20.0.0",
     "webpack": "^4.42.1",
     "webpack-dev-middleware": "^3.7.2",
