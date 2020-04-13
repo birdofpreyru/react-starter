@@ -18,6 +18,7 @@ import PageLayout from 'pages/examples/PageLayout';
 import ReactThemes from 'pages/examples/ReactThemes';
 import Svg from 'pages/examples/Svg';
 import Throbber from 'pages/examples/Throbber';
+import Tooltip from 'pages/examples/Tooltip';
 import Error404 from 'pages/Error404';
 
 export default function Routes({ match }) {
@@ -38,6 +39,7 @@ export default function Routes({ match }) {
       <Route component={ReactThemes} exact path={`${path}/react-themes`} />
       <Route component={Svg} exact path={`${path}/svg`} />
       <Route component={Throbber} exact path={`${path}/throbber`} />
+      <Route exact path={`${path}/tooltip`} component={Tooltip} />
       <Error404 />
     </Switch>
   );
