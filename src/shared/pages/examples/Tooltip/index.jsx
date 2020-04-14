@@ -19,9 +19,11 @@ export default function TooltipExample({ match }) {
         <WithTooltip
           theme={{
             arrow: styles.arrow,
-            tooltip: styles.tooltip,
+            container: styles.tooltip,
           }}
-          tip="Just a sample button with tooltip!"
+          tip={
+            <>Just a sample button<br />with tooltip</>
+          }
         >
           <Button>A Button</Button>
         </WithTooltip>
@@ -34,7 +36,8 @@ export default function TooltipExample({ match }) {
       <Link to={url.parent(match.url)}>&lArr; Content</Link>
       <h1>Tooltip</h1>
       <div styleName="content">
-        {buttons}
+        <div styleName="buttons">{buttons}</div>
+        <div styleName="buttons">{buttons}</div>
       </div>
     </PageLayout>
   );
