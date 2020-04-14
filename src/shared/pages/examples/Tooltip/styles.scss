@@ -1,6 +1,11 @@
 .content {
-  position: absolute;
-  // right: 0;
+  background: green;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buttons {
+  background: red;
 }
 
 .arrow {
