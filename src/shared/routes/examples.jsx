@@ -13,6 +13,7 @@ import Content from 'pages/examples/Content';
 import ApiClient from 'pages/examples/ApiClient';
 import AsyncGlobalData from 'pages/examples/AsyncGlobalData';
 import GlobalState from 'pages/examples/GlobalState';
+import InputFormComponents from 'pages/examples/InputFormComponents';
 import ModalExample from 'pages/examples/Modal';
 import PageLayout from 'pages/examples/PageLayout';
 import ReactThemes from 'pages/examples/ReactThemes';
@@ -34,6 +35,11 @@ export default function Routes({ match }) {
       />
       <Route component={Buttons} exact path={`${path}/buttons`} />
       <Route component={GlobalState} exact path={`${path}/global-state`} />
+      <Route
+        exact
+        path={`${path}/input-form-components`}
+        component={InputFormComponents}
+      />
       <Route component={ModalExample} exact path={`${path}/modal`} />
       <Route component={PageLayout} exact path={`${path}/page-layout`} />
       <Route component={ReactThemes} exact path={`${path}/react-themes`} />
