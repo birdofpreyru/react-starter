@@ -19,7 +19,9 @@ const SAMPLE_OPTIONS = [{
   value: 'option2',
 }, {
   value: 'option3',
-}];
+},
+'option #4',
+];
 
 export default function InputFormComponents({ match }) {
   return (
@@ -36,6 +38,9 @@ export default function InputFormComponents({ match }) {
       />
       <Button>Sample Button</Button>
       <Input label="test input" type="url" />
+      <Dropdown
+        options={SAMPLE_OPTIONS}
+      />
       <Input label="test input" type="url" />
       <div>
         <Input placeholder="test input" type="url" />

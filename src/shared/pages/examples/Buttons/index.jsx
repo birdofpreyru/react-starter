@@ -4,19 +4,16 @@ import React from 'react';
 
 import {
   config,
-  BaseButton,
   Button,
   Link,
   PageLayout,
   PT,
-  themed,
   ThemeProvider,
   url,
 } from '@dr.pogodin/react-utils';
 
 import adhocTheme from './adhoc-theme.scss';
 import contextTheme from './context-theme.scss';
-import dangerButtonTheme from './danger-button-theme.scss';
 
 const codeExample01 = `\
 import { Button } from '@dr.pogodin/react-utils';
@@ -118,114 +115,6 @@ export default function ButtonsDemo() {
   );
 }`;
 
-const codeExample07 = `\
-// danger-button-theme.scss
-
-*,
-.context,
-.ad.hoc {
-  /* Generic button of medium size. */
-  &.button {
-    align-items: center;
-    background-image: linear-gradient(to top, lightcoral, white 50%, white);
-    border: solid 1px lightcoral;
-    border-radius: 3px;
-    color: darkred;
-    display: inline-flex;
-    font: inherit;
-    justify-content: center;
-    min-height: 36px;
-    margin: 6px;
-    padding: 6px 24px;
-    text-align: center;
-    text-decoration: none;
-    vertical-align: middle;
-  }
-
-  /* Additional styling of disabled buttons. */
-  &.disabled {
-    cursor: not-allowed;
-    opacity: 0.33;
-  }
-
-  /* .link and .regular classes are applied only to active button-like links,
-   * and real buttons (rendered as <button> elements). */
-  &.link,
-  &.regular {
-    /* To prevent different styling of the button-like link once it has been
-    * visited. */
-    &:visited {
-      color: darkred;
-    }
-
-    &:focus {
-      box-shadow: 0 0 3px 1px lightcoral;
-      border-color: red;
-      outline: none;
-    }
-
-    &:hover {
-      border-color: coral;
-      cursor: pointer;
-    }
-
-    &.active,
-    &:active {
-      background-image: linear-gradient(to bottom, lightcoral, white 50%, white);
-      box-shadow: inset 0 1px 3px 0 lightcoral;
-      border-color: coral;
-    }
-  }
-
-  /* Alternative button sizes. */
-  &.xs {
-    border-radius: 1px;
-    min-height: 24px;
-    padding: 1px 12px;
-  }
-
-  &.sm {
-    border-radius: 1px;
-    min-height: 30px;
-    padding: 3px 18px;
-  }
-
-  &.lg {
-    border-radius: 3px;
-    min-height: 42px;
-    padding: 9px 30px;
-  }
-
-  &.xl {
-    border-radius: 6px;
-    min-height: 48px;
-    padding: 12px 36px;
-  }
-}`;
-
-const codeExample08 = `\
-// ButtonsDemo.jsx
-
-import { Button, themed } from '@dr.pogodin/react-utils';
-import dangerButtonTheme from './danger-button-theme.scss';
-
-const DangerButton = themed('DangerButton', dangerButtonTheme)(BaseButton);
-
-export default function ButtonsDemo() {
-  return (
-    <div>
-      <DangerButton>Button</DangerButton>
-      <DangerButton to="https://dr.pogodin.studio" openNewTab>
-        Button-Like Link
-      </DangerButton>
-      <DangerButton disabled>Disabled Button</DangerButton>
-      <DangerButton active>Forced-Active Button</DangerButton>
-    </div>
-  );
-}`;
-
-const DangerButton = themed('DangerButton', dangerButtonTheme)(BaseButton);
-
 export default function ButtonsDemo({ match }) {
   return (
     <PageLayout>
@@ -280,16 +169,6 @@ export default function ButtonsDemo({ match }) {
       </ThemeProvider>
       <pre>{codeExample06}</pre>
       <pre>{codeExample05}</pre>
-
-      <h5>With Custom Default Themes</h5>
-      <DangerButton>Button</DangerButton>
-      <DangerButton to="https://dr.pogodin.studio" openNewTab>
-        Button-Like Link
-      </DangerButton>
-      <DangerButton disabled>Disabled Button</DangerButton>
-      <DangerButton active>Forced-Active Button</DangerButton>
-      <pre>{codeExample08}</pre>
-      <pre>{codeExample07}</pre>
     </PageLayout>
   );
 }
