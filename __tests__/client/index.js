@@ -5,7 +5,7 @@ jest.mock('shared', () => ({
 }));
 
 jest.mock('@dr.pogodin/react-utils', () => {
-  const TRU = require.requireActual('@dr.pogodin/react-utils');
+  const TRU = jest.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
     client: jest.fn(),
