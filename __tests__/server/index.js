@@ -2,7 +2,7 @@ jest.mock('shared', () => 'APPLICATION');
 jest.mock('../../webpack.config', () => () => ({}));
 
 jest.mock('@dr.pogodin/react-utils', () => {
-  const TRU = require.requireActual('@dr.pogodin/react-utils');
+  const TRU = jest.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
     server: jest.fn(),
