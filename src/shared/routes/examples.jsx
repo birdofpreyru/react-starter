@@ -21,6 +21,7 @@ import Svg from 'pages/examples/Svg';
 import Throbber from 'pages/examples/Throbber';
 import Tooltip from 'pages/examples/Tooltip';
 import Error404 from 'pages/Error404';
+import YouTubeVideo from 'pages/examples/YouTubeVideo';
 
 export default function Routes({ match }) {
   const path = _.trimEnd(match.path, '/');
@@ -46,6 +47,7 @@ export default function Routes({ match }) {
       <Route component={Svg} exact path={`${path}/svg`} />
       <Route component={Throbber} exact path={`${path}/throbber`} />
       <Route exact path={`${path}/tooltip`} component={Tooltip} />
+      <Route exact path={`${path}/youtube-video`} component={YouTubeVideo} />
       <Error404 />
     </Switch>
   );
