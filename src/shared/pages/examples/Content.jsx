@@ -43,6 +43,7 @@ export default function Content({ match }) {
             Tooltip
           </Link>
         </li>
+        <li><Link to={`${path}/youtube-video`}>YouTube video</Link></li>
       </ul>
     </PageLayout>
   );
