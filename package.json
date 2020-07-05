@@ -38,7 +38,7 @@
     "npm": "^6.14.5"
   },
   "dependencies": {
-    "@dr.pogodin/react-utils": "^0.23.11",
+    "@dr.pogodin/react-utils": "^0.23.12",
     "cross-env": "^7.0.2",
     "react": "^16.13.1",
     "react-router-dom": "^5.2.0",
@@ -68,7 +68,7 @@
     "eslint-config-airbnb": "^18.2.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jest": "^23.17.1",
+    "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-react": "^7.20.3",
     "eslint-plugin-react-hooks": "^4.0.5",
@@ -89,7 +89,7 @@
     "react-test-renderer": "^16.13.1",
     "regenerator-runtime": "^0.13.5",
     "resolve-url-loader": "^3.1.1",
-    "sass-loader": "^9.0.1",
+    "sass-loader": "^8.0.2",
     "sitemap": "^6.1.7",
     "stylelint": "^13.6.1",
     "stylelint-config-standard": "^20.0.0",
