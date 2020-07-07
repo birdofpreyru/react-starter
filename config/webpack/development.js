@@ -2,7 +2,7 @@ const path = require('path');
 const standardConfigFactory = require(
   '@dr.pogodin/react-utils/config/webpack/app-development',
 );
-const webpackMerge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 
 const customDefaultConfig = require('./default');
 
@@ -13,7 +13,7 @@ const standardDevelopmentConfig = standardConfigFactory({
   },
 });
 
-module.exports = webpackMerge.smart(
+module.exports = merge(
   standardDevelopmentConfig,
   customDefaultConfig,
 );
