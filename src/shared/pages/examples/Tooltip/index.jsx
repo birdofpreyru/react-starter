@@ -17,6 +17,7 @@ export default function TooltipExample({ match }) {
     buttons.push((
       <div key={i}>
         <WithTooltip
+          placement={WithTooltip.PLACEMENTS.ABOVE_ELEMENT}
           theme={{
             arrow: styles.arrow,
             container: styles.tooltip,
