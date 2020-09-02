@@ -1,17 +1,17 @@
 import React from 'react';
 
 import {
-  hooks,
   Link,
   PageLayout,
   PT,
   Throbber,
   time,
   url,
+  useAsyncData,
 } from '@dr.pogodin/react-utils';
 
 function Demo() {
-  const { data, loading } = hooks.useAsyncData(
+  const { data, loading } = useAsyncData(
     'examples.asyncGlobalData',
     async () => {
       await time.timer(3 * time.SEC_MS);

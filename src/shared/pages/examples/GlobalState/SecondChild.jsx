@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { Button, hooks } from '@dr.pogodin/react-utils';
+import { Button, useGlobalState } from '@dr.pogodin/react-utils';
 
 export default function SecondChild() {
-  const [value, setValue] = hooks.useGlobalState('test.firstChild', 0);
+  const [value, setValue] = useGlobalState('test.firstChild', 0);
   return (
     <div>
       <h3>Second Child</h3>

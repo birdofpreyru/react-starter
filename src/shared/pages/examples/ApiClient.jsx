@@ -32,7 +32,7 @@ export default function ApiClient({ match }) {
           setData({ ...data, post });
         });
     }
-  });
+  }, [data]);
 
   return (
     <PageLayout>
