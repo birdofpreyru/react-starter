@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import {
   Button,
@@ -24,6 +24,10 @@ const SAMPLE_OPTIONS = [{
 ];
 
 export default function InputFormComponents({ match }) {
+  const [
+    controlledDropdownValue,
+    setControlledDropdownValue,
+  ] = useState('option1');
   return (
     <PageLayout>
       <Link to={url.parent(match.url)}>&lArr; Content</Link>
@@ -39,7 +43,9 @@ export default function InputFormComponents({ match }) {
       <Button>Sample Button</Button>
       <Input label="test input" type="url" />
       <Dropdown
+        onChange={(e) => setControlledDropdownValue(e.target.value)}
         options={SAMPLE_OPTIONS}
+        value={controlledDropdownValue}
       />
       <Input label="test input" type="url" />
       <div>
