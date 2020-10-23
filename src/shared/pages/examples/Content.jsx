@@ -2,7 +2,6 @@
  * The list of examples included into the starter pack.
  */
 
-import React from 'react';
 import {
   _,
   Link,

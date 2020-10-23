@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { PT, themed } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';

@@ -1,5 +1,4 @@
 import Application from 'shared';
-import React from 'react';
 
 const { JU } = jest.requireActual('@dr.pogodin/react-utils');
 

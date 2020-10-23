@@ -2,7 +2,7 @@
  * Demo/test of the Modal component.
  */
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import {
   Button,
   Input,

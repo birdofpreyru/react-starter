@@ -1,11 +1,7 @@
 /**
  * Root router of the app.
  */
-/* eslint-disable react/jsx-props-no-spreading */
 
-import path from 'path';
-
-import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import { CodeSplit, Throbber, webpack } from '@dr.pogodin/react-utils';
@@ -21,12 +17,15 @@ function Examples(props) {
       }
       getComponentServer={
         () => {
+          const path = webpack.requireWeak('path');
           const p = webpack.resolveWeak('./examples');
           return webpack.requireWeak(path.resolve(__dirname, p));
         }
       }
       placeholder={Throbber}
+      /* eslint-disable react/jsx-props-no-spreading */
       {...props}
+      /* eslint-enable react/jsx-props-no-spreading */
     />
   );
 }

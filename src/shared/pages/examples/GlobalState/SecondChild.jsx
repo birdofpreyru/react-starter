@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Button, useGlobalState } from '@dr.pogodin/react-utils';
 
 export default function SecondChild() {

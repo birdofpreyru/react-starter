@@ -2,8 +2,6 @@
  * Waiting icon.
  */
 
-import React from 'react';
-
 import {
   Link,
   PageLayout,

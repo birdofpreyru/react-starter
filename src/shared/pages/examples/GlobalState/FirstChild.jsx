@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { useGlobalState } from '@dr.pogodin/react-utils';
 
 export default function FirstChild() {

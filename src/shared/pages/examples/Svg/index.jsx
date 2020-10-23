@@ -2,7 +2,6 @@
  * Demo of SVG rendering.
  */
 
-import React from 'react';
 import {
   Link,
   PageLayout,

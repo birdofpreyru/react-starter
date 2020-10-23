@@ -2,8 +2,6 @@
  * A simple 404 error page.
  */
 
-import React from 'react';
-
 import './style.scss';
 
 export default function Error404Page() {

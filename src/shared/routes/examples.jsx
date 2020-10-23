@@ -2,8 +2,6 @@
  * Example routes.
  */
 
-import React from 'react';
-
 import { _, PT } from '@dr.pogodin/react-utils';
 
 import { Route, Switch } from 'react-router-dom';

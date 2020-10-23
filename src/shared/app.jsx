@@ -2,7 +2,6 @@
  * Root component of the app.
  */
 
-import React from 'react';
 import Routes from 'routes';
 
 import { MetaTags } from '@dr.pogodin/react-utils';

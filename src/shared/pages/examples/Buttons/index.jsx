@@ -1,7 +1,5 @@
 /* global alert */
 
-import React from 'react';
-
 import {
   config,
   Button,
