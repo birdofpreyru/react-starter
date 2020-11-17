@@ -12,8 +12,9 @@ export default function Application() {
       <MetaTags
         title="Dr. Pogodin's React Starter"
         description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
-      />
-      <Routes />
+      >
+        <Routes />
+      </MetaTags>
     </>
   );
 }
