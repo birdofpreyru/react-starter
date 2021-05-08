@@ -4,7 +4,7 @@
 
 import { Route, Switch } from 'react-router-dom';
 
-import { CodeSplit, Throbber, webpack } from '@dr.pogodin/react-utils';
+import { CodeSplit, Throbber } from '@dr.pogodin/react-utils';
 
 import Error404 from 'pages/Error404';
 
@@ -15,13 +15,7 @@ function Examples(props) {
       getComponentAsync={
         () => import(/* webpackChunkName: 'react-examples' */ './examples')
       }
-      getComponentServer={
-        () => {
-          const path = webpack.requireWeak('path');
-          const p = webpack.resolveWeak('./examples');
-          return webpack.requireWeak(path.resolve(__dirname, p));
-        }
-      }
+      getComponentServer={(rr) => rr(__dirname, './examples')}
       placeholder={Throbber}
       /* eslint-disable react/jsx-props-no-spreading */
       {...props}
