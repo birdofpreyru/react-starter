@@ -8,9 +8,7 @@ const customDefaultConfig = require('./default');
 
 const standardProductionConfig = standardConfigFactory({
   context: path.resolve(__dirname, '../..'),
-  entry: {
-    main: './src/client',
-  },
+  entry: './src/client',
   keepBuildInfo: Boolean(global.KEEP_BUILD_INFO),
 });
 
