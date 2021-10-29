@@ -15,5 +15,7 @@ test('Passes basic tests', () => {
   expect(server.mock.calls).toHaveLength(1);
   expect(server.mock.calls[0]).toMatchSnapshot();
   const { beforeRender } = server.mock.calls[0][1];
-  expect(() => beforeRender()).not.toThrow();
+  expect(
+    () => beforeRender({ headers: {} }),
+  ).not.toThrow();
 });
