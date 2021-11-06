@@ -9,17 +9,15 @@ import {
   Link,
   Modal,
   PageLayout,
-  PT,
-  url,
 } from '@dr.pogodin/react-utils';
 
-export default function ModalExample({ match }) {
+export default function ModalExample() {
   const [show, setShow] = useState(false);
   const [text, setText] = useState('');
   const [text2, setText2] = useState('');
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Modal</h1>
       <Button onClick={() => setShow(true)}>
         Show Modal
@@ -45,9 +43,3 @@ export default function ModalExample({ match }) {
     </PageLayout>
   );
 }
-
-ModalExample.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

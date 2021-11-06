@@ -5,15 +5,9 @@
  */
 
 import { useState, useEffect } from 'react';
-import {
-  api,
-  Link,
-  PageLayout,
-  PT,
-  url,
-} from '@dr.pogodin/react-utils';
+import { api, Link, PageLayout } from '@dr.pogodin/react-utils';
 
-export default function ApiClient({ match }) {
+export default function ApiClient() {
   const [data, setData] = useState({});
   useEffect(() => {
     if (!data.get) {
@@ -36,7 +30,7 @@ export default function ApiClient({ match }) {
 
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>API (HTTP) Client</h1>
       <ul>
         <li><Link to="#get-test">GET Test</Link></li>
@@ -49,9 +43,3 @@ export default function ApiClient({ match }) {
     </PageLayout>
   );
 }
-
-ApiClient.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

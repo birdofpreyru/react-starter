@@ -1,10 +1,8 @@
 import {
   Link,
   PageLayout,
-  PT,
   themed,
   ThemeProvider,
-  url,
 } from '@dr.pogodin/react-utils';
 
 import ThemedComponentOLD from './ThemedComponentOLD';
@@ -12,10 +10,10 @@ import ThemedComponentOLD from './ThemedComponentOLD';
 import contextTheme from './ThemedComponentOLD/context.scss';
 import adhocTheme from './ThemedComponentOLD/adhoc.scss';
 
-export default function ReactThemes({ match }) {
+export default function ReactThemes() {
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>React Themes</h1>
       <ThemedComponentOLD label="Green" />
       <ThemedComponentOLD label="Blue" theme={contextTheme} />
@@ -47,9 +45,3 @@ export default function ReactThemes({ match }) {
     </PageLayout>
   );
 }
-
-ReactThemes.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

@@ -11,7 +11,7 @@ exports[`Matches shallow snapshot 1`] = `
     title="Dr. Pogodin's React Starter"
     url={null}
   >
-    <Routes />
+    <AppRoutes />
   </MetaTags>
 </React.Fragment>
 `;
@@ -27,7 +27,7 @@ exports[`Matches shallow snapshot in dev mode 1`] = `
     title="Dr. Pogodin's React Starter"
     url={null}
   >
-    <Routes />
+    <AppRoutes />
   </MetaTags>
 </React.Fragment>
 `;

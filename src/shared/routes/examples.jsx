@@ -2,9 +2,9 @@
  * Example routes.
  */
 
-import { _, PT } from '@dr.pogodin/react-utils';
+import { PT } from '@dr.pogodin/react-utils';
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import Buttons from 'pages/examples/Buttons';
 import Content from 'pages/examples/Content';
@@ -21,33 +21,24 @@ import Tooltip from 'pages/examples/Tooltip';
 import Error404 from 'pages/Error404';
 import YouTubeVideo from 'pages/examples/YouTubeVideo';
 
-export default function Routes({ match }) {
-  const path = _.trimEnd(match.path, '/');
+export default function ExampleRoutes() {
   return (
-    <Switch>
-      <Route component={Content} exact path={path || '/'} />
-      <Route component={ApiClient} exact path={`${path}/api-client`} />
-      <Route
-        component={AsyncGlobalData}
-        exact
-        path={`${path}/async-global-data`}
-      />
-      <Route component={Buttons} exact path={`${path}/buttons`} />
-      <Route component={GlobalState} exact path={`${path}/global-state`} />
-      <Route
-        exact
-        path={`${path}/input-form-components`}
-        component={InputFormComponents}
-      />
-      <Route component={ModalExample} exact path={`${path}/modal`} />
-      <Route component={PageLayout} exact path={`${path}/page-layout`} />
-      <Route component={ReactThemes} exact path={`${path}/react-themes`} />
-      <Route component={Svg} exact path={`${path}/svg`} />
-      <Route component={Throbber} exact path={`${path}/throbber`} />
-      <Route exact path={`${path}/tooltip`} component={Tooltip} />
-      <Route exact path={`${path}/youtube-video`} component={YouTubeVideo} />
-      <Error404 />
-    </Switch>
+    <Routes>
+      <Route index element={<Content />} />
+      <Route path="api-client" element={<ApiClient />} />
+      <Route path="async-global-data" element={<AsyncGlobalData />} />
+      <Route path="buttons" element={<Buttons />} />
+      <Route path="global-state" element={<GlobalState />} />
+      <Route path="input-form-components" element={<InputFormComponents />} />
+      <Route path="modal" element={<ModalExample />} />
+      <Route path="page-layout" element={<PageLayout />} />
+      <Route path="react-themes" element={<ReactThemes />} />
+      <Route path="svg" element={<Svg />} />
+      <Route path="throbber" element={<Throbber />} />
+      <Route path="tooltip" element={<Tooltip />} />
+      <Route path="youtube-video" element={<YouTubeVideo />} />
+      <Route path="*" element={<Error404 />} />
+    </Routes>
   );
 }
 

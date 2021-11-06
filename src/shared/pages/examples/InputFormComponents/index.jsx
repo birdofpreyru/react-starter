@@ -7,8 +7,6 @@ import {
   Input,
   Link,
   PageLayout,
-  PT,
-  url,
 } from '@dr.pogodin/react-utils';
 
 const SAMPLE_OPTIONS = [{
@@ -23,14 +21,14 @@ const SAMPLE_OPTIONS = [{
 'option #4',
 ];
 
-export default function InputFormComponents({ match }) {
+export default function InputFormComponents() {
   const [
     controlledDropdownValue,
     setControlledDropdownValue,
   ] = useState('option1');
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Input Form Components</h1>
       <Button>Sample Button</Button>
       <Dropdown
@@ -57,9 +55,3 @@ export default function InputFormComponents({ match }) {
     </PageLayout>
   );
 }
-
-InputFormComponents.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

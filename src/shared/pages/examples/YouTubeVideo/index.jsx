@@ -1,15 +1,9 @@
-import {
-  Link,
-  PageLayout,
-  PT,
-  url,
-  YouTubeVideo,
-} from '@dr.pogodin/react-utils';
+import { Link, PageLayout, YouTubeVideo } from '@dr.pogodin/react-utils';
 
-export default function YouTubeVideoExample({ match }) {
+export default function YouTubeVideoExample() {
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>YouTube video example</h1>
       <YouTubeVideo
         src="https://youtu.be/NdF6Rmt6Ado"
@@ -17,9 +11,3 @@ export default function YouTubeVideoExample({ match }) {
     </PageLayout>
   );
 }
-
-YouTubeVideoExample.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

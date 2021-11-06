@@ -5,9 +5,7 @@ import {
   Button,
   Link,
   PageLayout,
-  PT,
   ThemeProvider,
-  url,
 } from '@dr.pogodin/react-utils';
 
 import adhocTheme from './adhoc-theme.scss';
@@ -113,10 +111,10 @@ export default function ButtonsDemo() {
   );
 }`;
 
-export default function ButtonsDemo({ match }) {
+export default function ButtonsDemo() {
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Buttons</h1>
       <p>
         <Link to={`${config.DOCS_BASE}/button.md`} openNewTab>
@@ -170,9 +168,3 @@ export default function ButtonsDemo({ match }) {
     </PageLayout>
   );
 }
-
-ButtonsDemo.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

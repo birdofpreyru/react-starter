@@ -1,12 +1,8 @@
-import {
-  config,
-  Link,
-  PageLayout,
-  PT,
-  url,
-} from '@dr.pogodin/react-utils';
+import { Link, PageLayout } from '@dr.pogodin/react-utils';
 
 import pageTheme from './page-theme.scss';
+
+const DOCS = 'https://dr.pogodin.studio/docs/react-utils/docs/api/components/pagelayout';
 
 const codeExample = `\
 import { PageLayout } from '@dr.pogodin/react-utils';
@@ -19,15 +15,13 @@ export default function PageDemo() {
   );
 }`;
 
-export default function PageLayoutDemo({ match }) {
+export default function PageLayoutDemo() {
   return (
     <PageLayout theme={pageTheme}>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Page Layout</h1>
       <pre>{codeExample}</pre>
-      <Link to={`${config.DOCS_BASE}/page-layout.md`} openNewTab>
-        Full Reference
-      </Link>
+      <Link to={DOCS} openNewTab>Full Reference</Link>
       <p>
         Simple and configurable page layout, demonstrated by this entire page.
         It keeps the main content centered in a column of limited width, which
@@ -52,9 +46,3 @@ export default function PageLayoutDemo({ match }) {
     </PageLayout>
   );
 }
-
-PageLayoutDemo.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

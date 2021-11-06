@@ -2,17 +2,15 @@ import {
   GlobalStateProvider,
   Link,
   PageLayout,
-  PT,
-  url,
 } from '@dr.pogodin/react-utils';
 
 import FirstChild from './FirstChild';
 import SecondChild from './SecondChild';
 
-export default function GlobalState({ match }) {
+export default function GlobalState() {
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Global State Test </h1>
       <GlobalStateProvider>
         <FirstChild />
@@ -25,9 +23,3 @@ export default function GlobalState({ match }) {
     </PageLayout>
   );
 }
-
-GlobalState.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

@@ -2,14 +2,12 @@ import {
   Button,
   Link,
   PageLayout,
-  PT,
-  url,
   WithTooltip,
 } from '@dr.pogodin/react-utils';
 
 import styles from './styles.scss';
 
-export default function TooltipExample({ match }) {
+export default function TooltipExample() {
   const buttons = [];
   for (let i = 0; i < 100; i += 1) {
     buttons.push((
@@ -32,7 +30,7 @@ export default function TooltipExample({ match }) {
 
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Tooltip</h1>
       <div styleName="content">
         <div styleName="buttons">{buttons}</div>
@@ -41,9 +39,3 @@ export default function TooltipExample({ match }) {
     </PageLayout>
   );
 }
-
-TooltipExample.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};

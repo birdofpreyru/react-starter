@@ -2,11 +2,9 @@
  * Root router of the app.
  */
 
-import { Route, Switch } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 
 import { CodeSplit, Throbber } from '@dr.pogodin/react-utils';
-
-import Error404 from 'pages/Error404';
 
 function Examples(props) {
   return (
@@ -24,11 +22,10 @@ function Examples(props) {
   );
 }
 
-export default function Routes() {
+export default function AppRoutes() {
   return (
-    <Switch>
-      <Route path="/" component={Examples} />
-      <Error404 />
-    </Switch>
+    <Routes>
+      <Route path="*" element={<Examples />} />
+    </Routes>
   );
 }

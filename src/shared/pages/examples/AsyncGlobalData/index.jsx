@@ -1,10 +1,8 @@
 import {
   Link,
   PageLayout,
-  PT,
   Throbber,
   time,
-  url,
   useAsyncData,
 } from '@dr.pogodin/react-utils';
 
@@ -26,18 +24,12 @@ function Demo() {
   );
 }
 
-export default function AsyncGlobalData({ match }) {
+export default function AsyncGlobalData() {
   return (
     <PageLayout>
-      <Link to={url.parent(match.url)}>&lArr; Content</Link>
+      <Link to="..">&lArr; Content</Link>
       <h1>Async Global Data</h1>
       <Demo />
     </PageLayout>
   );
 }
-
-AsyncGlobalData.propTypes = {
-  match: PT.shape({
-    url: PT.string.isRequired,
-  }).isRequired,
-};
