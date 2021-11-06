@@ -2,8 +2,6 @@
  * Example routes.
  */
 
-import { PT } from '@dr.pogodin/react-utils';
-
 import { Route, Routes } from 'react-router-dom';
 
 import Buttons from 'pages/examples/Buttons';
@@ -41,9 +39,3 @@ export default function ExampleRoutes() {
     </Routes>
   );
 }
-
-Routes.propTypes = {
-  match: PT.shape({
-    path: PT.string.isRequired,
-  }).isRequired,
-};

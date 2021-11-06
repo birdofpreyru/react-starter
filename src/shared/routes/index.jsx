@@ -2,8 +2,6 @@
  * Root router of the app.
  */
 
-import { Route, Routes } from 'react-router-dom';
-
 import { CodeSplit, Throbber } from '@dr.pogodin/react-utils';
 
 function Examples(props) {
@@ -23,9 +21,5 @@ function Examples(props) {
 }
 
 export default function AppRoutes() {
-  return (
-    <Routes>
-      <Route path="*" element={<Examples />} />
-    </Routes>
-  );
+  return <Examples />;
 }

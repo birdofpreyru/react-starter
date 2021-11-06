@@ -1,10 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Matches shallow snapshot 1`] = `
-<Routes>
-  <Route
-    element={<Examples />}
-    path="*"
-  />
-</Routes>
-`;
+exports[`Matches shallow snapshot 1`] = `<Examples />`;
