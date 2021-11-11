@@ -1,33 +1,29 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Matches shallow snapshot 1`] = `
-<React.Fragment>
-  <MetaTags
-    description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
-    image={null}
-    siteName={null}
-    socialDescription={null}
-    socialTitle={null}
-    title="Dr. Pogodin's React Starter"
-    url={null}
-  >
-    <AppRoutes />
-  </MetaTags>
-</React.Fragment>
+<MetaTags
+  description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+  image={null}
+  siteName={null}
+  socialDescription={null}
+  socialTitle={null}
+  title="Dr. Pogodin's React Starter"
+  url={null}
+>
+  <AppRoutes />
+</MetaTags>
 `;
 
 exports[`Matches shallow snapshot in dev mode 1`] = `
-<React.Fragment>
-  <MetaTags
-    description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
-    image={null}
-    siteName={null}
-    socialDescription={null}
-    socialTitle={null}
-    title="Dr. Pogodin's React Starter"
-    url={null}
-  >
-    <AppRoutes />
-  </MetaTags>
-</React.Fragment>
+<MetaTags
+  description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+  image={null}
+  siteName={null}
+  socialDescription={null}
+  socialTitle={null}
+  title="Dr. Pogodin's React Starter"
+  url={null}
+>
+  <AppRoutes />
+</MetaTags>
 `;
