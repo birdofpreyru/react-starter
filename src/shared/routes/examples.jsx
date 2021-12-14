@@ -11,6 +11,7 @@ import ApiClient from 'pages/examples/ApiClient';
 import AsyncGlobalData from 'pages/examples/AsyncGlobalData';
 import GlobalState from 'pages/examples/GlobalState';
 import InputFormComponents from 'pages/examples/InputFormComponents';
+import LinkTests from 'pages/examples/Links';
 import ModalExample from 'pages/examples/Modal';
 import PageLayout from 'pages/examples/PageLayout';
 import ReactThemes from 'pages/examples/ReactThemes';
@@ -30,6 +31,7 @@ export default function ExampleRoutes() {
       <Route path="buttons" element={<Buttons />} />
       <Route path="global-state" element={<GlobalState />} />
       <Route path="input-form-components" element={<InputFormComponents />} />
+      <Route path="links/*" element={<LinkTests />} />
       <Route path="modal" element={<ModalExample />} />
       <Route path="page-layout" element={<PageLayout />} />
       <Route path="react-themes" element={<ReactThemes />} />

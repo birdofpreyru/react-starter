@@ -15,6 +15,7 @@ export default function Content() {
         <li><Link to="buttons">Buttons</Link></li>
         <li><Link to="global-state">Global State</Link></li>
         <li><Link to="input-form-components">Input Form Components</Link></li>
+        <li><Link to="links">Link Tests</Link></li>
         <li><Link to="modal">Modal</Link></li>
         <li><Link to="page-layout">Page layout</Link></li>
         <li><Link to="react-themes">React themes</Link></li>
