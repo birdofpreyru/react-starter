@@ -11,6 +11,7 @@ export default function Content() {
       <ul>
         <li><Link to="api-client">API (HTTP) client</Link></li>
         <li><Link to="async-global-data">Async Global Data</Link></li>
+        <li><Link to="code-split">CodeSplit</Link></li>
         <li><Link to="buttons">Buttons</Link></li>
         <li><Link to="global-state">Global State</Link></li>
         <li><Link to="input-form-components">Input Form Components</Link></li>

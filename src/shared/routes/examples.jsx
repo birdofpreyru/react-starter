@@ -5,6 +5,7 @@
 import { Route, Routes } from 'react-router-dom';
 
 import Buttons from 'pages/examples/Buttons';
+import CodeSplit from 'pages/examples/CodeSplit';
 import Content from 'pages/examples/Content';
 import ApiClient from 'pages/examples/ApiClient';
 import AsyncGlobalData from 'pages/examples/AsyncGlobalData';
@@ -25,6 +26,7 @@ export default function ExampleRoutes() {
       <Route index element={<Content />} />
       <Route path="api-client" element={<ApiClient />} />
       <Route path="async-global-data" element={<AsyncGlobalData />} />
+      <Route path="code-split" element={<CodeSplit />} />
       <Route path="buttons" element={<Buttons />} />
       <Route path="global-state" element={<GlobalState />} />
       <Route path="input-form-components" element={<InputFormComponents />} />
