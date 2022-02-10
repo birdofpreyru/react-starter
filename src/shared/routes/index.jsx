@@ -2,23 +2,16 @@
  * Root router of the app.
  */
 
-import { CodeSplit, Throbber } from '@dr.pogodin/react-utils';
+import { splitComponent, Throbber, webpack } from '@dr.pogodin/react-utils';
 
-function Examples(props) {
-  return (
-    <CodeSplit
-      chunkName="react-examples"
-      getComponentAsync={
-        () => import(/* webpackChunkName: 'react-examples' */ './examples')
-      }
-      getComponentServer={(rr) => rr(__dirname, './examples')}
-      placeholder={Throbber}
-      /* eslint-disable react/jsx-props-no-spreading */
-      {...props}
-      /* eslint-enable react/jsx-props-no-spreading */
-    />
-  );
-}
+const Examples = splitComponent({
+  chunkName: 'react-examples',
+  getClientSide: () => import(
+    /* webpackChunkName: 'react-examples' */ './examples'
+  ),
+  placeholder: Throbber,
+  serverSide: webpack.requireWeak('./examples', __dirname),
+});
 
 export default function AppRoutes() {
   return <Examples />;
