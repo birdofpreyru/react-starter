@@ -8,7 +8,7 @@ if (process.env.NODE_ENV === 'production') {
 }
 /* eslint-enable global-require */
 
-import 'styles/global.scss'; // eslint-disable-line import/first
+require('styles/global.scss');
 
 const App = require('./app').default;
 
