@@ -5,16 +5,13 @@ import {
   PageLayout,
   splitComponent,
   Throbber,
-  webpack,
 } from '@dr.pogodin/react-utils';
 
 const SplitComponent = splitComponent({
   chunkName: 'code-split-example',
-  getClientSide: () => import(
-    /* webpackChunkName: 'code-split-example' */ './Component'
-  ),
-  placeholder: Throbber,
-  serverSide: webpack.requireWeak('./Component', __dirname),
+  getComponent:
+    () => import(/* webpackChunkName: 'code-split-example' */ './Component'),
+  placeholder: <Throbber />,
 });
 
 export default function CodeSplittingExample() {

@@ -2,15 +2,13 @@
  * Root router of the app.
  */
 
-import { splitComponent, Throbber, webpack } from '@dr.pogodin/react-utils';
+import { splitComponent, Throbber } from '@dr.pogodin/react-utils';
 
 const Examples = splitComponent({
   chunkName: 'react-examples',
-  getClientSide: () => import(
-    /* webpackChunkName: 'react-examples' */ './examples'
-  ),
-  placeholder: Throbber,
-  serverSide: webpack.requireWeak('./examples', __dirname),
+  getComponent:
+    () => import(/* webpackChunkName: 'react-examples' */ './examples'),
+  placeholder: <Throbber />,
 });
 
 export default function AppRoutes() {
