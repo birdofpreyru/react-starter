@@ -4,6 +4,7 @@
  * @webpack-config-options {
  *  "entry": "./__assets__/index.js",
  *  "dontUseHmr": true,
+ *  "dontUseProgressPlugin": true,
  *  "dontUseReactGlobalStateDebugging": true }
  * @ssr-options { "entry": "./__assets__/Scene.jsx" }
  */
