@@ -6,13 +6,16 @@ const { merge } = require('webpack-merge');
 
 const customDefaultConfig = require('./default');
 
-const standardProductionConfig = standardConfigFactory({
-  context: path.resolve(__dirname, '../..'),
-  entry: './src/client',
-  keepBuildInfo: Boolean(global.KEEP_BUILD_INFO),
-});
-
-module.exports = merge(
-  standardProductionConfig,
-  customDefaultConfig,
-);
+module.exports = function factory(options = {}) {
+  const standardProductionConfig = standardConfigFactory({
+    context: path.resolve(__dirname, '../..'),
+    entry: './src/client',
+    keepBuildInfo: Boolean(global.KEEP_BUILD_INFO),
+    ...options,
+  });
+  factory.buildInfo = standardConfigFactory.buildInfo;
+  merge(
+    standardProductionConfig,
+    customDefaultConfig,
+  );
+};

@@ -6,12 +6,15 @@ const { merge } = require('webpack-merge');
 
 const customDefaultConfig = require('./default');
 
-const standardDevelopmentConfig = standardConfigFactory({
-  context: path.resolve(__dirname, '../..'),
-  entry: './src/client',
-});
-
-module.exports = merge(
-  standardDevelopmentConfig,
-  customDefaultConfig,
-);
+module.exports = function factory(options = {}) {
+  const standardDevelopmentConfig = standardConfigFactory({
+    context: path.resolve(__dirname, '../..'),
+    entry: './src/client',
+    ...options,
+  });
+  factory.buildInfo = standardConfigFactory.buildInfo;
+  return merge(
+    standardDevelopmentConfig,
+    customDefaultConfig,
+  );
+};
