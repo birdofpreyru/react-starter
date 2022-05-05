@@ -14,7 +14,7 @@ module.exports = function factory(options = {}) {
     ...options,
   });
   factory.buildInfo = standardConfigFactory.buildInfo;
-  merge(
+  return merge(
     standardProductionConfig,
     customDefaultConfig,
   );
