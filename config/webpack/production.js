@@ -13,7 +13,6 @@ module.exports = function factory(options = {}) {
     keepBuildInfo: Boolean(global.KEEP_BUILD_INFO),
     ...options,
   });
-  factory.buildInfo = standardConfigFactory.buildInfo;
   return merge(
     standardProductionConfig,
     customDefaultConfig,

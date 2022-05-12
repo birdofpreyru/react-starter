@@ -12,7 +12,6 @@ module.exports = function factory(options = {}) {
     entry: './src/client',
     ...options,
   });
-  factory.buildInfo = standardConfigFactory.buildInfo;
   return merge(
     standardDevelopmentConfig,
     customDefaultConfig,
