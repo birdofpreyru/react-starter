@@ -21,7 +21,10 @@ it('performs correct SSR and client-side hydration', async () => {
   const view = document.querySelector('#react-view').innerHTML;
   expect(view).toMatchSnapshot();
   const outputPath = global.webpackConfig.output.path;
-  const js = global.webpackOutputFs.readFileSync(`${outputPath}/main.js`);
+  const js = global.webpackOutputFs.readFileSync(
+    `${outputPath}/main.js`,
+    'utf8',
+  );
   await act(new Function(js)); // eslint-disable-line no-new-func
   expect(document.querySelector('#react-view').innerHTML).toBe(view);
 });
