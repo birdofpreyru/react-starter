@@ -15,5 +15,7 @@ test('Passes basic testing', () => {
   const { client } = require('@dr.pogodin/react-utils');
   expect(client.mock.calls[0]).toEqual([{
     default: 'APPLICATION',
+  }, {
+    dontHydrate: false,
   }]);
 });
