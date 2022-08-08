@@ -13,9 +13,7 @@ jest.mock('@dr.pogodin/react-utils', () => {
 test('Passes basic testing', () => {
   require('client');
   const { client } = require('@dr.pogodin/react-utils');
-  expect(client.mock.calls[0]).toEqual([{
-    default: 'APPLICATION',
-  }, {
+  expect(client.mock.calls[0]).toEqual(['APPLICATION', {
     dontHydrate: false,
   }]);
 });
