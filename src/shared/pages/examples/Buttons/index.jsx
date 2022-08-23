@@ -27,21 +27,6 @@ export default function ButtonsDemo() {
   );
 }`;
 
-const codeExample02 = `\
-import { Button } from '@dr.pogodin/react-utils';
-
-export default function ButtonsDemo() {
-  return (
-    <div>
-      <Button size="xs">Button</Button>
-      <Button size="sm">Button</Button>
-      <Button size="md">Button (Default)</Button>
-      <Button size="lg">Button</Button>
-      <Button size="xl">Button</Button>
-    </div>
-  );
-}`;
-
 const codeExample03 = `\
 // adhoc-theme.scss
 
@@ -129,14 +114,6 @@ export default function ButtonsDemo() {
       <Button disabled>Disabled Button</Button>
       <Button active>Forced-Active Button</Button>
       <pre>{codeExample01}</pre>
-
-      <h3>Buttons of Different Size</h3>
-      <Button size="xs">Button</Button>
-      <Button size="sm">Button</Button>
-      <Button size="md">Button (Default)</Button>
-      <Button size="lg">Button</Button>
-      <Button size="xl">Button</Button>
-      <pre>{codeExample02}</pre>
 
       <h3>Button Styling</h3>
 

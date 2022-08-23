@@ -1,6 +1,8 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 
 import {
+  api,
+  config,
   Button,
   Checkbox,
   Dropdown,
@@ -26,6 +28,7 @@ export default function InputFormComponents() {
     controlledDropdownValue,
     setControlledDropdownValue,
   ] = useState('option1');
+  const lastInputRef = useRef();
   return (
     <PageLayout>
       <Link to="..">&lArr; Content</Link>
@@ -47,11 +50,38 @@ export default function InputFormComponents() {
       />
       <Input label="test input" type="url" />
       <div>
-        <Input placeholder="test input" type="url" />
+        <Input
+          onKeyPress={(e) => {
+            if (e.key === 'Enter') lastInputRef.current.focus();
+          }}
+          placeholder="test input"
+          type="url"
+        />
       </div>
       <Checkbox checked />
       <Checkbox label="test" />
-      <Input placeholder="test input" type="url" />
+      <Input
+        placeholder="test input"
+        ref={lastInputRef}
+        type="url"
+      />
+      <h3>CSRF Test</h3>
+      <Button
+        onClick={async () => {
+          await api.post('/__api__/example');
+        }}
+      >
+        Fail CSRF Protection
+      </Button>
+      <Button
+        onClick={async () => {
+          await api.post('/__api__/example', {
+            _csrf: config.CSRF,
+          });
+        }}
+      >
+        Pass CSRF Protection
+      </Button>
     </PageLayout>
   );
 }
