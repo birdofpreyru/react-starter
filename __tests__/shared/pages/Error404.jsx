@@ -1,6 +1,10 @@
 import Error404Page from 'pages/Error404';
-import { JU } from '@dr.pogodin/react-utils';
+import { GlobalStateProvider, JU } from '@dr.pogodin/react-utils';
 
 test('Matches shallow snapshot', () => {
-  JU.shallowSnapshot(<Error404Page />);
+  JU.snapshot(
+    <GlobalStateProvider>
+      <Error404Page />
+    </GlobalStateProvider>,
+  );
 });
