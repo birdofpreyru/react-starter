@@ -1,7 +1,21 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Matches shallow snapshot 1`] = `
-<h1>
-  Error 404: Requested resource is not found.
-</h1>
+<div
+  className="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___container___T3cuHB"
+>
+  <div
+    className="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___sidePanel___lqNh4h "
+  />
+  <div
+    className="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___mainPanel___pPlQO2"
+  >
+    <h1>
+      Error 404: Requested resource is not found.
+    </h1>
+  </div>
+  <div
+    className="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___sidePanel___lqNh4h "
+  />
+</div>
 `;
