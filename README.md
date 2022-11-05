@@ -6,3 +6,5 @@ The easiest way to start a complex ReactJS project based on
 [`@dr.pogodin/react-utils`](https://dr.pogodin.studio/docs/react-utils).
 
 [>>> **Getting Started** <<<](https://dr.pogodin.studio/docs/react-utils/docs/tutorials)
+
+[![Sponsor](.README/sponsor.png)](https://github.com/sponsors/birdofpreyru)
