@@ -21,6 +21,7 @@ export default function Content() {
         <li><Link to="react-themes">React themes</Link></li>
         <li><Link to="svg">SVG demo</Link></li>
         <li><Link to="throbber">Throbber (activity indicator)</Link></li>
+        <li><Link to="time-hooks">Time hooks</Link></li>
         <li><Link to="tooltip">Tooltip</Link></li>
         <li><Link to="youtube-video">YouTube video</Link></li>
       </ul>

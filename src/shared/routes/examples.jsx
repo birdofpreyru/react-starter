@@ -17,6 +17,7 @@ import PageLayout from 'pages/examples/PageLayout';
 import ReactThemes from 'pages/examples/ReactThemes';
 import Svg from 'pages/examples/Svg';
 import Throbber from 'pages/examples/Throbber';
+import TimeHooks from 'pages/examples/TimeHooks';
 import Tooltip from 'pages/examples/Tooltip';
 import Error404 from 'pages/Error404';
 import YouTubeVideo from 'pages/examples/YouTubeVideo';
@@ -37,6 +38,7 @@ export default function ExampleRoutes() {
       <Route path="react-themes" element={<ReactThemes />} />
       <Route path="svg" element={<Svg />} />
       <Route path="throbber" element={<Throbber />} />
+      <Route path="time-hooks" element={<TimeHooks />} />
       <Route path="tooltip" element={<Tooltip />} />
       <Route path="youtube-video" element={<YouTubeVideo />} />
       <Route path="*" element={<Error404 />} />
