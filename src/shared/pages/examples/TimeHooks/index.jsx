@@ -14,7 +14,7 @@ export default function TimeHooks() {
       <Link to="..">&lArr; Content</Link>
       <h1>Time Hooks</h1>
       <div>UTC time: {time.utc(now).format('HH:mm:ss')}</div>
-      <div>Local time: {time.utc(now + offset).format('HH:mm:ss')}</div>
+      <div>Local time: {time(now).utcOffset(-offset).format('HH:mm:ss')}</div>
     </PageLayout>
   );
 }
