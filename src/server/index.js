@@ -5,8 +5,9 @@
 import fs from 'fs';
 import path from 'path';
 
-import Application from 'shared';
 import { server as serverFactory } from '@dr.pogodin/react-utils';
+
+import Application from 'shared';
 
 const mode = process.env.NODE_ENV;
 

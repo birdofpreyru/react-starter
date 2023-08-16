@@ -2,9 +2,9 @@
  * Root component of the app.
  */
 
-import Routes from 'routes';
-
 import { MetaTags } from '@dr.pogodin/react-utils';
+
+import Routes from 'routes';
 
 export default function Application() {
   return (
