@@ -5,7 +5,9 @@ import {
   WithTooltip,
 } from '@dr.pogodin/react-utils';
 
-import styles from './styles.scss';
+import './styles.scss';
+
+import theme from './tooltip.theme.scss';
 
 export default function TooltipExample() {
   const buttons = [];
@@ -14,10 +16,7 @@ export default function TooltipExample() {
       <div key={i}>
         <WithTooltip
           placement={WithTooltip.PLACEMENTS.ABOVE_ELEMENT}
-          theme={{
-            arrow: styles.arrow,
-            container: styles.tooltip,
-          }}
+          theme={theme}
           tip={
             <>Just a sample button<br />with tooltip</>
           }

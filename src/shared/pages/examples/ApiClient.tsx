@@ -13,8 +13,13 @@ import {
   PageLayout,
 } from '@dr.pogodin/react-utils';
 
+type StateT = {
+  get?: string;
+  post?: string;
+};
+
 export default function ApiClient() {
-  const [data, setData] = useState({});
+  const [data, setData] = useState<StateT>({});
   useEffect(() => {
     if (!data.get) {
       setData({ ...data, get: 'Testing...' });

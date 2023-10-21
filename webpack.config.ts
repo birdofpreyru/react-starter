@@ -1,10 +1,10 @@
 /* eslint-disable global-require */
 /* eslint-disable import/no-dynamic-require */
 
-const fs = require('fs');
+import fs from 'fs';
 
-module.exports = function configFactory(env) {
-  const baseFactory = require(`./config/webpack/${env}.js`);
+export default function configFactory(env: string) {
+  const baseFactory = require(`./config/webpack/${env}.ts`).default;
   const config = baseFactory();
   fs.writeFileSync(
     `${__dirname}/.build-webpack-config.json`,

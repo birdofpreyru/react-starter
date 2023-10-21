@@ -28,7 +28,7 @@ export default function InputFormComponents() {
     controlledDropdownValue,
     setControlledDropdownValue,
   ] = useState('option1');
-  const lastInputRef = useRef();
+  const lastInputRef = useRef<HTMLInputElement>(null);
   return (
     <PageLayout>
       <Link to="..">&lArr; Content</Link>
@@ -51,8 +51,8 @@ export default function InputFormComponents() {
       <Input label="test input" type="url" />
       <div>
         <Input
-          onKeyPress={(e) => {
-            if (e.key === 'Enter') lastInputRef.current.focus();
+          onKeyDown={(e) => {
+            if (e.key === 'Enter') lastInputRef.current?.focus();
           }}
           placeholder="test input"
           type="url"

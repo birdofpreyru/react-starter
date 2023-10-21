@@ -5,6 +5,8 @@
 import fs from 'fs';
 import path from 'path';
 
+import { type Request } from 'express';
+
 import { server as serverFactory } from '@dr.pogodin/react-utils';
 
 import Application from 'shared';
@@ -20,11 +22,13 @@ if (mode === 'production') {
   webpackConfig = JSON.parse(fs.readFileSync(webpackConfig, 'utf-8'));
 } else {
   /* eslint-disable global-require */
-  webpackConfig = require('../../webpack.config')(mode);
+  webpackConfig = require('../../webpack.config');
+  if ('default' in webpackConfig) webpackConfig = webpackConfig.default;
+  webpackConfig = webpackConfig(mode);
   /* eslint-enable global-require */
 }
 
-async function beforeRender(req) {
+async function beforeRender(req: Request) {
   return {
     initialState: {
       domain: `${req.protocol}://${req.headers.host || req.hostname}`,
@@ -32,8 +36,12 @@ async function beforeRender(req) {
   };
 }
 
+declare module global {
+  let KEEP_BUILD_INFO: boolean;
+}
+
 global.KEEP_BUILD_INFO = true;
-serverFactory(webpackConfig, {
+serverFactory!(webpackConfig, {
   Application,
   beforeRender,
   devMode: mode === 'development',

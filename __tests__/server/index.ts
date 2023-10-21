@@ -6,7 +6,8 @@ jest.mock('@dr.pogodin/react-utils', () => {
   return {
     ...TRU,
     server: jest.fn(),
-  };
+  }
+  ;
 });
 
 test('Passes basic tests', () => {

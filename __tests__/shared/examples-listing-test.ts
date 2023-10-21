@@ -16,19 +16,23 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { act } from 'react-dom/test-utils';
 
+import { JU } from '@dr.pogodin/react-utils';
+
+const global = JU!.getGlobal();
+
 // Fails after update of E2eSsrEnv to throw on Webpack compilation failures,
 // as the current setup fails to build SASS because it can't correctly resolve
 // aliased paths, like "styles/mixins", etc.
 // It is related to: https://github.com/birdofpreyru/react-utils/issues/263
 it.skip('performs correct SSR and client-side hydration', async () => {
-  document.write(global.ssrMarkup);
-  const view = document.querySelector('#react-view').innerHTML;
+  document.write(global.ssrMarkup!);
+  const view = document.querySelector('#react-view')!.innerHTML;
   expect(view).toMatchSnapshot();
-  const outputPath = global.webpackConfig.output.path;
+  const outputPath = global.webpackConfig!.output!.path;
   const js = global.webpackOutputFs.readFileSync(
     `${outputPath}/main.js`,
     'utf8',
-  );
-  await act(new Function(js)); // eslint-disable-line no-new-func
-  expect(document.querySelector('#react-view').innerHTML).toBe(view);
+  ) as string;
+  await act(() => new Function(js)()); // eslint-disable-line no-new-func
+  expect(document.querySelector('#react-view')!.innerHTML).toBe(view);
 });

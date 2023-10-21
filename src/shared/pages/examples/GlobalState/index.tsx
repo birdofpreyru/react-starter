@@ -12,11 +12,11 @@ export default function GlobalState() {
     <PageLayout>
       <Link to="..">&lArr; Content</Link>
       <h1>Global State Test </h1>
-      <GlobalStateProvider>
+      <GlobalStateProvider initialState={{}}>
         <FirstChild />
         <SecondChild />
       </GlobalStateProvider>
-      <GlobalStateProvider>
+      <GlobalStateProvider initialState={{}}>
         <FirstChild />
         <SecondChild />
       </GlobalStateProvider>

@@ -6,7 +6,7 @@ const { client } = require('@dr.pogodin/react-utils');
 
 const Application = require('../shared').default;
 
-const isHmrEnabled = !!module.hot;
+const isHmrEnabled = !!(module as any).hot;
 
 client(Application, {
   // With HMR hydration may throw hydration errors in subsequent re-renders.

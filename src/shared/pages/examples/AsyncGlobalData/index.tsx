@@ -3,8 +3,16 @@ import {
   PageLayout,
   Throbber,
   time,
-  useAsyncData,
+  withGlobalStateType,
 } from '@dr.pogodin/react-utils';
+
+type StateT = {
+  examples: {
+    asyncGlobalData: never;
+  };
+};
+
+const { useAsyncData } = withGlobalStateType<StateT>();
 
 function Demo() {
   const { data, loading } = useAsyncData(
