@@ -5,7 +5,13 @@
  */
 
 import { useState, useEffect } from 'react';
-import { api, Link, PageLayout } from '@dr.pogodin/react-utils';
+
+import {
+  api,
+  config,
+  Link,
+  PageLayout,
+} from '@dr.pogodin/react-utils';
 
 export default function ApiClient() {
   const [data, setData] = useState({});
@@ -20,11 +26,13 @@ export default function ApiClient() {
     }
     if (!data.post) {
       setData({ ...data, post: 'Testing...' });
-      api.post('/__api__/example', { key: 'value' })
-        .then((res) => {
-          const post = JSON.stringify(res, null, 2);
-          setData({ ...data, post });
-        });
+      api.post('/__api__/example', {
+        _csrf: config.CSRF,
+        key: 'value',
+      }).then((res) => {
+        const post = JSON.stringify(res, null, 2);
+        setData({ ...data, post });
+      });
     }
   }, [data]);
 
