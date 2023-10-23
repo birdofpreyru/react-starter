@@ -10,16 +10,11 @@ import ThemedComponentOLD from './ThemedComponentOLD';
 import contextTheme from './ThemedComponentOLD/context.scss';
 import adhocTheme from './ThemedComponentOLD/adhoc.scss';
 
-import Test from './test';
-
 export default function ReactThemes() {
   return (
     <PageLayout>
       <Link to="..">&lArr; Content</Link>
       <h1>React Themes!!!!</h1>
-
-      <Test />
-
       <ThemedComponentOLD label="Green" />
       <ThemedComponentOLD label="Blue" theme={contextTheme} />
       <ThemedComponentOLD label="Purple" theme={adhocTheme} />

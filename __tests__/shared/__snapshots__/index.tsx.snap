@@ -3,12 +3,12 @@
 exports[`Matches shallow snapshot 1`] = `
 <MetaTags
   description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
-  image={null}
-  siteName={null}
-  socialDescription={null}
-  socialTitle={null}
+  image=""
+  siteName=""
+  socialDescription=""
+  socialTitle=""
   title="Dr. Pogodin's React Starter"
-  url={null}
+  url=""
 >
   <AppRoutes />
 </MetaTags>
@@ -17,12 +17,12 @@ exports[`Matches shallow snapshot 1`] = `
 exports[`Matches shallow snapshot in dev mode 1`] = `
 <MetaTags
   description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
-  image={null}
-  siteName={null}
-  socialDescription={null}
-  socialTitle={null}
+  image=""
+  siteName=""
+  socialDescription=""
+  socialTitle=""
   title="Dr. Pogodin's React Starter"
-  url={null}
+  url=""
 >
   <AppRoutes />
 </MetaTags>

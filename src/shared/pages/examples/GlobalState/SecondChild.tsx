@@ -1,8 +1,8 @@
-import { Button, withGlobalStateType } from '@dr.pogodin/react-utils';
+import { type RgsApi, Button, Rgs } from '@dr.pogodin/react-utils';
 
 import { type StateT } from './FirstChild';
 
-const { useGlobalState } = withGlobalStateType<StateT>();
+const { useGlobalState } = Rgs as RgsApi<StateT>;
 
 export default function SecondChild() {
   const [value, setValue] = useGlobalState('test.firstChild', 0);

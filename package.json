@@ -40,12 +40,12 @@
     "npm": ">=9"
   },
   "dependencies": {
-    "@dr.pogodin/react-themes": "file:../react-themes/dr.pogodin-react-themes-2.0.0.tgz",
-    "@dr.pogodin/react-utils": "file:../react-utils/dr.pogodin-react-utils-1.26.0.tgz",
+    "@dr.pogodin/react-themes": "^1.5.1",
+    "@dr.pogodin/react-utils": "^1.26.1",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
-    "react-router-dom": "^6.16.0"
+    "react-router-dom": "^6.17.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",

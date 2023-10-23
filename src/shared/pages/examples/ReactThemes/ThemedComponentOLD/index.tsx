@@ -1,20 +1,21 @@
-import { type ThemeT, themedComponent } from '@dr.pogodin/react-utils';
+import { type Theme, themed } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';
 
 type PropsT = {
   label: string;
-  theme: ThemeT;
+  theme: Theme & {
+    container?: string;
+    content?: string;
+  };
 };
 
-function Component({ label, theme }: PropsT) {
-  return (
-    <div className={theme.container}>
-      <div className={theme.content}>
-        {label}
-      </div>
+const Component: React.FunctionComponent<PropsT> = ({ label, theme }) => (
+  <div className={theme.container}>
+    <div className={theme.content}>
+      {label}
     </div>
-  );
-}
+  </div>
+);
 
-export default themedComponent('ThemedComponent', Component, defaultTheme);
+export default themed(Component, 'ThemedComponent', defaultTheme);
