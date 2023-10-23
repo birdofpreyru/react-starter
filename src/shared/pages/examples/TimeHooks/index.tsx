@@ -6,7 +6,7 @@ time.extend(UTC);
 export default function TimeHooks() {
   const now = time.useCurrent({
     autorefresh: true,
-    precision: time.SEC_MS / 3,
+    precision: time.SEC_MS / 10,
   });
   const offset = time.useTimezoneOffset();
   return (
