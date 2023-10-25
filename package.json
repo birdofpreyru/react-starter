@@ -7,7 +7,7 @@
     "build": "node_modules/.bin/react-utils-build -t production --webpack-config webpack.config.ts",
     "build:dev": "node_modules/.bin/react-utils-build -t development --webpack-config webpack.config.ts",
     "build:types-scss": "rimraf build/types-scss && typed-scss-modules .",
-    "dev": "cross-env BABEL_ENV=development NODE_ENV=development babel-node --extensions '.ts','.tsx','.svg' src/server",
+    "dev": "typed-scss-modules . -w & cross-env BABEL_ENV=development NODE_ENV=development babel-node --extensions '.ts','.tsx','.svg' src/server",
     "fix:js": "./node_modules/.bin/eslint --fix --ext .js,.jsx .",
     "fix:styles": "./node_modules/.bin/stylelint **/*.scss --syntax scss --fix",
     "jest": "cross-env NODE_CONFIG_ENV=test ./node_modules/.bin/jest --config config/jest/default.js",
