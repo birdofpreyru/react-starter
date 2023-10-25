@@ -8,7 +8,7 @@ export type StateT = {
 
 const { useGlobalState } = withGlobalStateType<StateT>();
 
-export default function FirstChild() {
+const FirstChild: React.FunctionComponent = () => {
   const [value] = useGlobalState('test.firstChild', 0);
   return (
     <div>
@@ -16,4 +16,6 @@ export default function FirstChild() {
       Value: {value}
     </div>
   );
-}
+};
+
+export default FirstChild;

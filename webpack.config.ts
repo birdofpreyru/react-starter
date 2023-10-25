@@ -11,4 +11,4 @@ export default function configFactory(env: string) {
     JSON.stringify(config),
   );
   return config;
-};
+}

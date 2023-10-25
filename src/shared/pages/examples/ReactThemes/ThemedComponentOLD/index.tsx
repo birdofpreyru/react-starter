@@ -1,4 +1,4 @@
-import { type Theme, themed } from '@dr.pogodin/react-utils';
+import { type Theme, PT, themed } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';
 
@@ -18,4 +18,14 @@ const Component: React.FunctionComponent<PropsT> = ({ label, theme }) => (
   </div>
 );
 
-export default themed(Component, 'ThemedComponent', defaultTheme);
+const ThemedComponent = themed(Component, 'ThemedComponent', [
+  'container',
+  'content',
+], defaultTheme);
+
+Component.propTypes = {
+  label: PT.string.isRequired,
+  theme: ThemedComponent.themeType.isRequired,
+};
+
+export default ThemedComponent;

@@ -14,7 +14,7 @@ type StateT = {
 
 const { useAsyncData } = withGlobalStateType<StateT>();
 
-function Demo() {
+const Demo: React.FunctionComponent = () => {
   const { data, loading } = useAsyncData(
     'examples.asyncGlobalData',
     async () => {
@@ -30,14 +30,14 @@ function Demo() {
       { loading ? <Throbber /> : data }
     </div>
   );
-}
+};
 
-export default function AsyncGlobalData() {
-  return (
-    <PageLayout>
-      <Link to="..">&lArr; Content</Link>
-      <h1>Async Global Data</h1>
-      <Demo />
-    </PageLayout>
-  );
-}
+const AsyncGlobalData: React.FunctionComponent = () => (
+  <PageLayout>
+    <Link to="..">&lArr; Content</Link>
+    <h1>Async Global Data</h1>
+    <Demo />
+  </PageLayout>
+);
+
+export default AsyncGlobalData;

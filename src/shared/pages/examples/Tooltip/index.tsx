@@ -9,7 +9,7 @@ import './styles.scss';
 
 import theme from './tooltip.theme.scss';
 
-export default function TooltipExample() {
+const TooltipExample: React.FunctionComponent = () => {
   const buttons = [];
   for (let i = 0; i < 100; i += 1) {
     buttons.push((
@@ -37,4 +37,6 @@ export default function TooltipExample() {
       </div>
     </PageLayout>
   );
-}
+};
+
+export default TooltipExample;

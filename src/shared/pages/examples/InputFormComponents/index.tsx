@@ -23,7 +23,7 @@ const SAMPLE_OPTIONS = [{
 'option #4',
 ];
 
-export default function InputFormComponents() {
+const InputFormComponents: React.FunctionComponent = () => {
   const [
     controlledDropdownValue,
     setControlledDropdownValue,
@@ -84,4 +84,6 @@ export default function InputFormComponents() {
       </Button>
     </PageLayout>
   );
-}
+};
+
+export default InputFormComponents;

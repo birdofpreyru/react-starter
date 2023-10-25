@@ -11,7 +11,7 @@ import {
   useGlobalState,
 } from '@dr.pogodin/react-utils';
 
-export default function ModalExample() {
+const ModalExample: React.FunctionComponent = () => {
   const [show, setShow] = useGlobalState('a', false);
   const [text, setText] = useGlobalState('b', '');
   const [text2, setText2] = useGlobalState('c', '');
@@ -42,4 +42,6 @@ export default function ModalExample() {
       }
     </PageLayout>
   );
-}
+};
+
+export default ModalExample;

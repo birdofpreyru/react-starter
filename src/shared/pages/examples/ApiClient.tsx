@@ -18,7 +18,7 @@ type StateT = {
   post?: string;
 };
 
-export default function ApiClient() {
+const ApiClient: React.FunctionComponent = () => {
   const [data, setData] = useState<StateT>({});
   useEffect(() => {
     if (!data.get) {
@@ -55,4 +55,6 @@ export default function ApiClient() {
       <pre>{ data.post }</pre>
     </PageLayout>
   );
-}
+};
+
+export default ApiClient;

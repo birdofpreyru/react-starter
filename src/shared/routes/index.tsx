@@ -11,6 +11,6 @@ const Examples = splitComponent({
   placeholder: <Throbber />,
 });
 
-export default function AppRoutes() {
-  return <Examples />;
-}
+const AppRoutes: React.FunctionComponent = () => <Examples />;
+
+export default AppRoutes;

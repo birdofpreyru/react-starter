@@ -14,12 +14,12 @@ const SplitComponent = splitComponent({
   placeholder: <Throbber />,
 });
 
-export default function CodeSplittingExample() {
-  return (
-    <PageLayout>
-      <Link to="..">&lArr; Content</Link>
-      <h1>Code Splitting Example</h1>
-      <SplitComponent />
-    </PageLayout>
-  );
-}
+const CodeSplittingExample: React.FunctionComponent = () => (
+  <PageLayout>
+    <Link to="..">&lArr; Content</Link>
+    <h1>Code Splitting Example</h1>
+    <SplitComponent />
+  </PageLayout>
+);
+
+export default CodeSplittingExample;

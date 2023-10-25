@@ -4,7 +4,7 @@ import { type StateT } from './FirstChild';
 
 const { useGlobalState } = withGlobalStateType<StateT>();
 
-export default function SecondChild() {
+const SecondChild: React.FunctionComponent = () => {
   const [value, setValue] = useGlobalState('test.firstChild', 0);
   return (
     <div>
@@ -18,4 +18,6 @@ export default function SecondChild() {
       </Button>
     </div>
   );
-}
+};
+
+export default SecondChild;

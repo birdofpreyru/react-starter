@@ -22,26 +22,26 @@ import Tooltip from 'pages/examples/Tooltip';
 import Error404 from 'pages/Error404';
 import YouTubeVideo from 'pages/examples/YouTubeVideo';
 
-export default function ExampleRoutes() {
-  return (
-    <Routes>
-      <Route index element={<Content />} />
-      <Route path="api-client" element={<ApiClient />} />
-      <Route path="async-global-data" element={<AsyncGlobalData />} />
-      <Route path="code-splitting" element={<CodeSplittingExample />} />
-      <Route path="buttons" element={<Buttons />} />
-      <Route path="global-state" element={<GlobalState />} />
-      <Route path="input-form-components" element={<InputFormComponents />} />
-      <Route path="links/*" element={<LinkTests />} />
-      <Route path="modal" element={<ModalExample />} />
-      <Route path="page-layout" element={<PageLayout />} />
-      <Route path="react-themes" element={<ReactThemes />} />
-      <Route path="svg" element={<Svg />} />
-      <Route path="throbber" element={<Throbber />} />
-      <Route path="time-hooks" element={<TimeHooks />} />
-      <Route path="tooltip" element={<Tooltip />} />
-      <Route path="youtube-video" element={<YouTubeVideo />} />
-      <Route path="*" element={<Error404 />} />
-    </Routes>
-  );
-}
+const ExampleRoutes: React.FunctionComponent = () => (
+  <Routes>
+    <Route index element={<Content />} />
+    <Route path="api-client" element={<ApiClient />} />
+    <Route path="async-global-data" element={<AsyncGlobalData />} />
+    <Route path="code-splitting" element={<CodeSplittingExample />} />
+    <Route path="buttons" element={<Buttons />} />
+    <Route path="global-state" element={<GlobalState />} />
+    <Route path="input-form-components" element={<InputFormComponents />} />
+    <Route path="links/*" element={<LinkTests />} />
+    <Route path="modal" element={<ModalExample />} />
+    <Route path="page-layout" element={<PageLayout />} />
+    <Route path="react-themes" element={<ReactThemes />} />
+    <Route path="svg" element={<Svg />} />
+    <Route path="throbber" element={<Throbber />} />
+    <Route path="time-hooks" element={<TimeHooks />} />
+    <Route path="tooltip" element={<Tooltip />} />
+    <Route path="youtube-video" element={<YouTubeVideo />} />
+    <Route path="*" element={<Error404 />} />
+  </Routes>
+);
+
+export default ExampleRoutes;

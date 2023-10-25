@@ -20,4 +20,4 @@ export default function factory(options = {}) {
     standardDevelopmentConfig,
     customDefaultConfig,
   );
-};
+}
