@@ -1,4 +1,4 @@
-import { type RgsApi, Rgs } from '@dr.pogodin/react-utils';
+import { withGlobalStateType } from '@dr.pogodin/react-utils';
 
 export type StateT = {
   test: {
@@ -6,7 +6,7 @@ export type StateT = {
   };
 };
 
-const { useGlobalState } = Rgs as RgsApi<StateT>;
+const { useGlobalState } = withGlobalStateType<StateT>();
 
 export default function FirstChild() {
   const [value] = useGlobalState('test.firstChild', 0);

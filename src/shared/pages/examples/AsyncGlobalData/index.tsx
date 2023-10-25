@@ -1,10 +1,9 @@
 import {
-  type RgsApi,
   Link,
   PageLayout,
-  Rgs,
   Throbber,
   time,
+  withGlobalStateType,
 } from '@dr.pogodin/react-utils';
 
 type StateT = {
@@ -13,7 +12,7 @@ type StateT = {
   };
 };
 
-const { useAsyncData } = Rgs as RgsApi<StateT>;
+const { useAsyncData } = withGlobalStateType<StateT>();
 
 function Demo() {
   const { data, loading } = useAsyncData(
