@@ -108,8 +108,19 @@ export default function ButtonsDemo() {
       </p>
       <h3>Basic Button Example</h3>
       <Button onClick={() => alert('Button Clicked')}>Button</Button>
-      <Button to="https://dr.pogodin.studio" openNewTab>
+      <Button
+        openNewTab
+        to="https://dr.pogodin.studio"
+      >
         Button-Like Link
+      </Button>
+      <Button
+        // eslint-disable-next-line no-alert
+        onClick={() => alert('I have been clicked!')}
+        openNewTab
+        to="https://dr.pogodin.studio"
+      >
+        Button-Like Link with additional onClick()
       </Button>
       <Button disabled>Disabled Button</Button>
       <Button active>Forced-Active Button</Button>
