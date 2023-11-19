@@ -2,19 +2,20 @@
  * Demo/test of the Modal component.
  */
 
+import { useState } from 'react';
+
 import {
   Button,
   Input,
   Link,
   Modal,
   PageLayout,
-  useGlobalState,
 } from '@dr.pogodin/react-utils';
 
 const ModalExample: React.FunctionComponent = () => {
-  const [show, setShow] = useGlobalState('a', false);
-  const [text, setText] = useGlobalState('b', '');
-  const [text2, setText2] = useGlobalState('c', '');
+  const [show, setShow] = useState(false);
+  const [text, setText] = useState('');
+  const [text2, setText2] = useState('');
   return (
     <PageLayout>
       <Link to="..">&lArr; Content</Link>

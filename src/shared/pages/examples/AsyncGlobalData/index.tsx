@@ -1,4 +1,5 @@
 import {
+  type AsyncDataEnvelopeT,
   Link,
   PageLayout,
   Throbber,
@@ -8,7 +9,7 @@ import {
 
 type StateT = {
   examples: {
-    asyncGlobalData: never;
+    asyncGlobalData: AsyncDataEnvelopeT<string>;
   };
 };
 

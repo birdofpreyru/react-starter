@@ -41,11 +41,11 @@
   },
   "dependencies": {
     "@dr.pogodin/react-themes": "^1.5.1",
-    "@dr.pogodin/react-utils": "^1.26.3",
+    "@dr.pogodin/react-utils": "^1.26.5",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.10",
     "react": "^18.2.0",
-    "react-router-dom": "^6.17.0"
+    "react-router-dom": "^6.19.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.23.0",
