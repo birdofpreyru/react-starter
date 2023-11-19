@@ -1,7 +1,19 @@
+declare module '*.jpg' {
+  export default string;
+}
+
+declare module '*.png' {
+  export default string;
+}
+
 declare module '*.svg' {
   import type { ComponentType } from 'react';
 
-  const component: ComponentType;
+  const component: ComponentType<{
+    className?: string;
+    height?: number;
+    width?: number;
+  }>;
   export default component;
 }
 
