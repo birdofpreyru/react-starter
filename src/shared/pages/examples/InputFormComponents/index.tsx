@@ -9,6 +9,8 @@ import {
   Input,
   Link,
   PageLayout,
+  useGlobalState,
+  type ForceT,
 } from '@dr.pogodin/react-utils';
 
 const SAMPLE_OPTIONS = [{
@@ -29,6 +31,9 @@ const InputFormComponents: React.FunctionComponent = () => {
     setControlledDropdownValue,
   ] = useState('option1');
   const lastInputRef = useRef<HTMLInputElement>(null);
+
+  const [value, setValue] = useGlobalState<ForceT, string>('test-input-form-components-path', '');
+
   return (
     <PageLayout>
       <Link to="..">&lArr; Content</Link>
@@ -65,6 +70,8 @@ const InputFormComponents: React.FunctionComponent = () => {
         ref={lastInputRef}
         type="url"
       />
+      <h3>Input Connected to the Global State</h3>
+      <Input onChange={(e) => setValue(e.target.value)} value={value} />
       <h3>CSRF Test</h3>
       <Button
         onClick={async () => {
