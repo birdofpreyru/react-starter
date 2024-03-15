@@ -1,14 +1,16 @@
-import { useRef, useState } from 'react';
+import { useState } from 'react';
 
 import {
   api,
   config,
   Button,
   Checkbox,
+  CustomDropdown,
   Dropdown,
   Input,
   Link,
   PageLayout,
+  Switch,
   TextArea,
   useGlobalState,
   type ForceT,
@@ -29,13 +31,17 @@ const SAMPLE_OPTIONS = [{
 ];
 
 const InputFormComponents: React.FunctionComponent = () => {
+  const [checked, setChecked] = useState(false);
+
   const [
     controlledDropdownValue,
     setControlledDropdownValue,
   ] = useState('option1');
-  const lastInputRef = useRef<HTMLInputElement>(null);
 
-  const [value, setValue] = useGlobalState<ForceT, string>('test-input-form-components-path', '');
+  const [value, setValue] = useGlobalState<ForceT, string>(
+    'test-input-form-components-path',
+    '',
+  );
 
   const [taValue, setTaValue] = useState('');
 
@@ -43,52 +49,71 @@ const InputFormComponents: React.FunctionComponent = () => {
     <PageLayout>
       <Link to="..">&lArr; Content</Link>
       <h1>Input Form Components</h1>
+
+      <h2>Button</h2>
       <Button>Sample Button</Button>
-      <Dropdown
-        options={SAMPLE_OPTIONS}
+      <Button disabled>Disabled Button</Button>
+
+      <h2>Checkbox</h2>
+      <Checkbox
+        checked={checked}
+        label="Sample <Checkbox>"
+        onChange={(e) => setChecked(e.target.checked)}
       />
-      <Dropdown
-        label="Dropdown label"
+
+      <h2>Custom Dropdown</h2>
+      <CustomDropdown
+        label="TEST"
+        onChange={setControlledDropdownValue}
         options={SAMPLE_OPTIONS}
+        value={controlledDropdownValue}
       />
-      <Button>Sample Button</Button>
-      <Input label="test input" type="url" />
+
+      <h2>Input</h2>
+      <Input
+        label="Sample unmanaged <Input>"
+        placeholder="Placeholder"
+        type="url"
+      />
+      <Input
+        label="Managed via the global state"
+        onChange={(e) => setValue(e.target.value)}
+        placeholder="Try me"
+        value={value}
+      />
+
+      <h2>Native Dropdown</h2>
       <Dropdown
+        label="Native <Dropdown>"
         onChange={(e) => setControlledDropdownValue(e.target.value)}
         options={SAMPLE_OPTIONS}
         value={controlledDropdownValue}
       />
-      <Input label="test input" type="url" />
-      <div>
-        <Input
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') lastInputRef.current?.focus();
-          }}
-          placeholder="test input"
-          type="url"
+      <div styleName="testDiv">
+        <Dropdown
+          label="Dropdown inside narrow flex-container"
+          onChange={(e) => setControlledDropdownValue(e.target.value)}
+          options={SAMPLE_OPTIONS}
+          value={controlledDropdownValue}
         />
       </div>
-      <Checkbox checked />
-      <Checkbox label="test" />
-      <Input
-        placeholder="test input"
-        ref={lastInputRef}
-        type="url"
-      />
+
+      <h2>Text Area</h2>
       <TextArea
         onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setTaValue(e.target.value)}
         placeholder="Example TextArea"
         value={taValue}
       />
-      <h3>Dropdown inside narrow flex-container</h3>
-      <div styleName="testDiv">
-        <Dropdown
-          label="Dropdown label"
-          options={SAMPLE_OPTIONS}
-        />
-      </div>
-      <h3>Input Connected to the Global State</h3>
-      <Input onChange={(e) => setValue(e.target.value)} value={value} />
+      <TextArea disabled value="Disabled text area" />
+
+      <h2>Switch</h2>
+      <Switch
+        label="<Switch> test"
+        onChange={setControlledDropdownValue}
+        options={SAMPLE_OPTIONS}
+        value={controlledDropdownValue}
+      />
+
       <h3>CSRF Test</h3>
       <Button
         onClick={async () => {
