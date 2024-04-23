@@ -36,7 +36,9 @@ const InputFormComponents: React.FunctionComponent = () => {
   const [
     controlledDropdownValue,
     setControlledDropdownValue,
-  ] = useState('option1');
+    // TODO: This <string | number> type is a temporary workaround for the issue
+    // https://github.com/birdofpreyru/react-utils/issues/342
+  ] = useState<string | number>('option1');
 
   const [value, setValue] = useGlobalState<ForceT, string>(
     'test-input-form-components-path',
