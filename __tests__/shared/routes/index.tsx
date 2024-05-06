@@ -1,7 +1,9 @@
-import { JU } from '@dr.pogodin/react-utils';
+/** @jest-environment jsdom */
+
+import { snapshot } from '@dr.pogodin/react-utils/jest';
 
 import Routes from 'routes';
 
 test('Matches shallow snapshot', () => {
-  JU!.shallowSnapshot(<Routes />);
+  snapshot(<Routes />);
 });

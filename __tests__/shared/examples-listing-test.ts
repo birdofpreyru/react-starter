@@ -13,12 +13,9 @@
 // SSR and client-side, and it also tests that E2eSsrEnv Jest environment works
 // fine outside the react-utils.
 
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { act } from 'react-dom/test-utils';
+import { act, getGlobal } from '@dr.pogodin/react-utils/jest';
 
-import { JU } from '@dr.pogodin/react-utils';
-
-const global = JU!.getGlobal();
+const global = getGlobal();
 
 // Fails after update of E2eSsrEnv to throw on Webpack compilation failures,
 // as the current setup fails to build SASS because it can't correctly resolve

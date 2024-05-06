@@ -9,9 +9,10 @@ jest.mock('@dr.pogodin/react-utils', () => {
   };
 });
 
+require('server');
+const { server } = require('@dr.pogodin/react-utils');
+
 test('Passes basic tests', () => {
-  require('server');
-  const { server } = require('@dr.pogodin/react-utils');
   expect(server.mock.calls).toHaveLength(1);
   expect(server.mock.calls[0]).toMatchSnapshot();
   const { beforeRender } = server.mock.calls[0][1];
