@@ -7,13 +7,10 @@ declare module '*.png' {
 }
 
 declare module '*.svg' {
-  import type { ComponentType } from 'react';
+  import type { ComponentType, SVGAttributes } from 'react';
 
-  const component: ComponentType<{
-    className?: string;
-    height?: number;
-    width?: number;
-  }>;
+  const component: ComponentType<SVGAttributes>;
+
   export default component;
 }
 
