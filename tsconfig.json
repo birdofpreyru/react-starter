@@ -15,7 +15,7 @@
     "moduleResolution": "Node",
 
     "paths": {
-      "*": ["./src/shared/*", "./src/*", "./*"]
+      "*": ["./build/types-scss/src/*", "./src/shared/*", "./src/*", "./*"]
     },
     "rootDirs": [".", "build/types-scss"],
     "strict": true,
