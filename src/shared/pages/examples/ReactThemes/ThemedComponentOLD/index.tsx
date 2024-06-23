@@ -1,12 +1,10 @@
-import { type Theme, PT, themed } from '@dr.pogodin/react-utils';
+import { type Theme, themed } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';
 
-const validThemeKeys = ['container', 'content'] as const;
-
 type PropsT = {
   label: string;
-  theme: Theme<typeof validThemeKeys>;
+  theme: Theme<'container' | 'content'>;
 };
 
 const Component: React.FunctionComponent<PropsT> = ({ label, theme }) => (
@@ -17,16 +15,4 @@ const Component: React.FunctionComponent<PropsT> = ({ label, theme }) => (
   </div>
 );
 
-const ThemedComponent = themed(
-  Component,
-  'ThemedComponent',
-  validThemeKeys,
-  defaultTheme,
-);
-
-Component.propTypes = {
-  label: PT.string.isRequired,
-  theme: ThemedComponent.themeType.isRequired,
-};
-
-export default ThemedComponent;
+export default themed(Component, 'ThemedComponent', defaultTheme);
