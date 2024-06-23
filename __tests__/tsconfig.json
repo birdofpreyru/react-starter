@@ -1,11 +1,9 @@
 // TODO: This config should come from the utility library.
 {
-  "extends": "@tsconfig/recommended",
+  "extends": "../config/typescript/base.json",
   "exclude": ["ts-types/"],
   "include": [".."],
   "compilerOptions": {
-    "jsx": "react-jsx",
-
     // BEWARE: Different settings are likely to transform dynamic import()
     // statements in the code, thus breaking Webpack's code splitting.
     // See: https://davidea.st/articles/webpack-typescript-code-split-wont-work
@@ -20,10 +18,5 @@
       "..",
       "../build/types-scss",
     ],
-    "strict": true,
-
-    // This ensures TypeScript does not remove unused imports, which may cause
-    // troubles when we rely on some side-effects from imported modules.
-    "verbatimModuleSyntax": true,
   },
 }
