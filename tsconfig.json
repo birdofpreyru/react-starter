@@ -3,7 +3,7 @@
 {
   // Note: Full relative paths, as some tools don't support Node module
   // resolution mechanics.
-  "extends": "./config/typescript/base.json",
+  "extends": "@dr.pogodin/react-utils/config/typescript/base.json",
 
   "compilerOptions": {
     // BEWARE: Different settings are likely to transform dynamic import()

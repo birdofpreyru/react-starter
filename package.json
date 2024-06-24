@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "@dr.pogodin/react-themes": "^1.7.0",
-    "@dr.pogodin/react-utils": "^1.36.0",
+    "@dr.pogodin/react-utils": "^1.36.2",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.11",
     "react": "^18.3.1",
@@ -61,7 +61,7 @@
     "@dr.pogodin/babel-plugin-transform-assets": "^1.2.2",
     "@dr.pogodin/babel-preset-svgr": "^1.8.0",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.15",
-    "@testing-library/dom": "^10.1.0",
+    "@testing-library/dom": "^10.2.0",
     "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^14.5.2",
     "@tsconfig/recommended": "^1.0.6",

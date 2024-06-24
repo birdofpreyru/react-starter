@@ -1,6 +1,6 @@
 // TODO: This config should come from the utility library.
 {
-  "extends": "../config/typescript/base.json",
+  "extends": "@dr.pogodin/react-utils/config/typescript/base.json",
   "exclude": ["ts-types/"],
   "include": [".."],
   "compilerOptions": {
