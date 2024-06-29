@@ -36,7 +36,7 @@ async function beforeRender(req: Request) {
   };
 }
 
-declare module global {
+declare namespace global {
   let KEEP_BUILD_INFO: boolean;
 }
 

@@ -7,7 +7,7 @@ import { merge } from 'webpack-merge';
 
 import customDefaultConfig from './default';
 
-declare module global {
+declare namespace global {
   const KEEP_BUILD_INFO: {};
 }
 

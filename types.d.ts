@@ -9,7 +9,7 @@ declare module '*.png' {
 declare module '*.svg' {
   import type { ComponentType, SVGAttributes } from 'react';
 
-  const component: ComponentType<SVGAttributes>;
+  const component: ComponentType<SVGAttributes<HTMLElement>>;
 
   export default component;
 }
