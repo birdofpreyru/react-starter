@@ -1,17 +1,128 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Matches shallow snapshot 1`] = `
-<span
-  class="_7zdld4"
+<div
+  class="T3cuHB"
 >
-  <span
-    class="dBrB4g"
+  <div
+    class="lqNh4h "
   />
-  <span
-    class="dBrB4g"
+  <div
+    class="pPlQO2"
+  >
+    <h1>
+      Dr. Pogodin's React Starter
+    </h1>
+    <ul>
+      <li>
+        <a
+          href="/api-client"
+        >
+          API (HTTP) client
+        </a>
+      </li>
+      <li>
+        <a
+          href="/async-global-data"
+        >
+          Async global data
+        </a>
+      </li>
+      <li>
+        <a
+          href="/code-splitting"
+        >
+          Code splitting
+        </a>
+      </li>
+      <li>
+        <a
+          href="/buttons"
+        >
+          Buttons
+        </a>
+      </li>
+      <li>
+        <a
+          href="/global-state"
+        >
+          Global state
+        </a>
+      </li>
+      <li>
+        <a
+          href="/input-form-components"
+        >
+          Input form components
+        </a>
+      </li>
+      <li>
+        <a
+          href="/links"
+        >
+          Link tests
+        </a>
+      </li>
+      <li>
+        <a
+          href="/modal"
+        >
+          Modal
+        </a>
+      </li>
+      <li>
+        <a
+          href="/page-layout"
+        >
+          Page layout
+        </a>
+      </li>
+      <li>
+        <a
+          href="/react-themes"
+        >
+          React themes
+        </a>
+      </li>
+      <li>
+        <a
+          href="/svg"
+        >
+          SVG demo
+        </a>
+      </li>
+      <li>
+        <a
+          href="/throbber"
+        >
+          Throbber (activity indicator)
+        </a>
+      </li>
+      <li>
+        <a
+          href="/time-hooks"
+        >
+          Time hooks
+        </a>
+      </li>
+      <li>
+        <a
+          href="/tooltip"
+        >
+          Tooltip
+        </a>
+      </li>
+      <li>
+        <a
+          href="/youtube-video"
+        >
+          YouTube video
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="lqNh4h "
   />
-  <span
-    class="dBrB4g"
-  />
-</span>
+</div>
 `;
