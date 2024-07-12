@@ -1,7 +1,7 @@
+import axios from 'axios';
 import { useState } from 'react';
 
 import {
-  api,
   config,
   Button,
   Checkbox,
@@ -119,14 +119,14 @@ const InputFormComponents: React.FunctionComponent = () => {
       <h3>CSRF Test</h3>
       <Button
         onClick={async () => {
-          await api.post('/__api__/example');
+          await axios.post('/__api__/example');
         }}
       >
         Fail CSRF Protection
       </Button>
       <Button
         onClick={async () => {
-          await api.post('/__api__/example', {
+          await axios.post('/__api__/example', {
             _csrf: config.CSRF,
           });
         }}

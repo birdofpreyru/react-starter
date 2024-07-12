@@ -4,14 +4,10 @@
  * [axios](https://www.npmjs.com/package/axios) library.
  */
 
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-import {
-  api,
-  config,
-  Link,
-  PageLayout,
-} from '@dr.pogodin/react-utils';
+import { config, Link, PageLayout } from '@dr.pogodin/react-utils';
 
 type StateT = {
   get?: string;
@@ -23,7 +19,7 @@ const ApiClient: React.FunctionComponent = () => {
   useEffect(() => {
     if (!data.get) {
       setData({ ...data, get: 'Testing...' });
-      api.get('/__api__/example')
+      axios.get('/__api__/example')
         .then((res) => {
           const get = JSON.stringify(res, null, 2);
           setData({ ...data, get });
@@ -31,7 +27,7 @@ const ApiClient: React.FunctionComponent = () => {
     }
     if (!data.post) {
       setData({ ...data, post: 'Testing...' });
-      api.post('/__api__/example', {
+      axios.post('/__api__/example', {
         _csrf: config.CSRF,
         key: 'value',
       }).then((res) => {
