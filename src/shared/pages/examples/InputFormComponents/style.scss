@@ -1,6 +1,26 @@
-.testDiv {
+.testFlexContainer01 {
   background: whitesmoke;
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
+  margin: 6px;
   max-width: 150px;
+}
+
+.testFlexContainer02 {
+  background: whitesmoke;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
+  max-width: 300px;
+}
+
+.testFlexContainer03 {
+  align-items: stretch;
+  background: whitesmoke;
+  border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  margin: 6px;
 }

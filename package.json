@@ -40,8 +40,7 @@
     "npm": ">=9"
   },
   "dependencies": {
-    "@dr.pogodin/react-themes": "^1.7.0",
-    "@dr.pogodin/react-utils": "^1.39.1",
+    "@dr.pogodin/react-utils": "^1.39.3",
     "axios": "^1.7.2",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.12",

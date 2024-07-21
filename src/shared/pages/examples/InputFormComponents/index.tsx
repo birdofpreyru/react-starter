@@ -16,6 +16,8 @@ import {
   type ForceT,
 } from '@dr.pogodin/react-utils';
 
+import stretchingDropdownTheme from './streching-dropdown.scss';
+
 import './style.scss';
 
 const SAMPLE_OPTIONS = [{
@@ -28,6 +30,7 @@ const SAMPLE_OPTIONS = [{
   value: 'option3',
 },
 'option #4',
+'An option with quite a long name',
 ];
 
 const InputFormComponents: React.FunctionComponent = () => {
@@ -91,11 +94,28 @@ const InputFormComponents: React.FunctionComponent = () => {
         options={SAMPLE_OPTIONS}
         value={controlledDropdownValue}
       />
-      <div styleName="testDiv">
+      <div styleName="testFlexContainer01">
         <Dropdown
           label="Dropdown inside narrow flex-container"
           onChange={(e) => setControlledDropdownValue(e.target.value)}
           options={SAMPLE_OPTIONS}
+          value={controlledDropdownValue}
+        />
+      </div>
+      <div styleName="testFlexContainer02">
+        <Dropdown
+          label="Dropdown inside narrow flex-container"
+          onChange={(e) => setControlledDropdownValue(e.target.value)}
+          options={SAMPLE_OPTIONS}
+          value={controlledDropdownValue}
+        />
+      </div>
+      <div styleName="testFlexContainer03">
+        <Dropdown
+          label="Dropdown inside narrow flex-container"
+          onChange={(e) => setControlledDropdownValue(e.target.value)}
+          options={SAMPLE_OPTIONS}
+          theme={stretchingDropdownTheme}
           value={controlledDropdownValue}
         />
       </div>
