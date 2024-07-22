@@ -2,20 +2,20 @@
 
 exports[`Matches shallow snapshot 1`] = `
 <div
-  class="T3cuHB"
+  class="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___container___T3cuHB"
 >
   <div
-    class="lqNh4h "
+    class="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___sidePanel___lqNh4h "
   />
   <div
-    class="pPlQO2"
+    class="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___mainPanel___pPlQO2"
   >
     <h1>
       Error 404: Requested resource is not found.
     </h1>
   </div>
   <div
-    class="lqNh4h "
+    class="-dr-pogodin-react-utils___src-shared-components-PageLayout-base-theme___sidePanel___lqNh4h "
   />
 </div>
 `;
