@@ -36,6 +36,8 @@ const SAMPLE_OPTIONS = [{
 const InputFormComponents: React.FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
 
+  const [checked3, setChecked3] = useState<boolean | 'indeterminate'>('indeterminate');
+
   const [
     controlledDropdownValue,
     setControlledDropdownValue,
@@ -64,6 +66,43 @@ const InputFormComponents: React.FunctionComponent = () => {
         checked={checked}
         label="Sample <Checkbox>"
         onChange={(e) => setChecked(e.target.checked)}
+      />
+      <Checkbox
+        checked={checked3}
+        label="Three-state checkbox"
+        onChange={() => {
+          switch (checked3) {
+            case false:
+              setChecked3('indeterminate');
+              return;
+            case true:
+              setChecked3(false);
+              return;
+            case 'indeterminate':
+              setChecked3(true);
+              return;
+            default: throw Error('Bad checked value');
+          }
+        }}
+      />
+      <Checkbox
+        checked={checked3}
+        disabled
+        label="Disabled three-state checkbox"
+        onChange={() => {
+          switch (checked3) {
+            case false:
+              setChecked3('indeterminate');
+              return;
+            case true:
+              setChecked3(false);
+              return;
+            case 'indeterminate':
+              setChecked3(true);
+              return;
+            default: throw Error('Bad checked value');
+          }
+        }}
       />
 
       <h2>Custom Dropdown</h2>
