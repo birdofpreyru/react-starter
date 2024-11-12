@@ -7,7 +7,7 @@
  * them into "mixins.scss" and include that into component stylesheets!
  */
 
-@import "mixins";
+@use "mixins" as *;
 
 body {
   @include typography;

@@ -15,7 +15,14 @@ test('Matches shallow snapshot', async () => {
   const Routes = require('routes').default;
   await snapshot(
     <GlobalStateProvider initialState={{}}>
-      <MemoryRouter><Routes /></MemoryRouter>
+      <MemoryRouter
+        future={{
+          v7_relativeSplatPath: true,
+          v7_startTransition: true,
+        }}
+      >
+        <Routes />
+      </MemoryRouter>
     </GlobalStateProvider>,
     { await: time.timer(0) },
   );
