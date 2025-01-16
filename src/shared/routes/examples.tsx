@@ -2,7 +2,7 @@
  * Example routes.
  */
 
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from 'react-router';
 
 import Buttons from 'pages/examples/Buttons';
 import CodeSplittingExample from 'pages/examples/CodeSplitting';

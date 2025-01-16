@@ -1,6 +1,6 @@
 /** @jest-environment jsdom */
 
-import { MemoryRouter } from 'react-router-dom';
+import { MemoryRouter } from 'react-router';
 import { mockClientSide, snapshot } from '@dr.pogodin/react-utils/jest';
 
 test('Matches shallow snapshot', async () => {
@@ -15,12 +15,7 @@ test('Matches shallow snapshot', async () => {
   const Routes = require('routes').default;
   await snapshot(
     <GlobalStateProvider initialState={{}}>
-      <MemoryRouter
-        future={{
-          v7_relativeSplatPath: true,
-          v7_startTransition: true,
-        }}
-      >
+      <MemoryRouter>
         <Routes />
       </MemoryRouter>
     </GlobalStateProvider>,
