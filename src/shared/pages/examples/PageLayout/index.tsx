@@ -20,7 +20,7 @@ const PageLayoutDemo: React.FunctionComponent = () => (
     <Link to="..">&lArr; Content</Link>
     <h1>Page Layout</h1>
     <pre>{codeExample}</pre>
-    <Link to={DOCS} openNewTab>Full Reference</Link>
+    <Link openNewTab to={DOCS}>Full Reference</Link>
     <p>
       Simple and configurable page layout, demonstrated by this entire page.
       It keeps the main content centered in a column of limited width, which
@@ -29,9 +29,9 @@ const PageLayoutDemo: React.FunctionComponent = () => (
       can be shown in the side panels.
     </p>
     <p>
-      The component is easily themeable, e.g. in this page <em>ad hoc</em>
-      theming is used to show layout parts with thick borders of different
-      colors (no borders are displayed by default).
+      The component is easily themeable, e.g. in this page
+      &zwnj; <em>ad hoc</em> theming is used to show layout parts with thick
+      borders of different colors (no borders are displayed by default).
     </p>
     <ul>
       <li>

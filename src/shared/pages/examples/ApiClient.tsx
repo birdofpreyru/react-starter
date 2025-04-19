@@ -19,7 +19,7 @@ const ApiClient: React.FunctionComponent = () => {
   useEffect(() => {
     if (!data.get) {
       setData({ ...data, get: 'Testing...' });
-      axios.get('/__api__/example')
+      void axios.get('/__api__/example')
         .then((res) => {
           const get = JSON.stringify(res, null, 2);
           setData({ ...data, get });
@@ -27,7 +27,7 @@ const ApiClient: React.FunctionComponent = () => {
     }
     if (!data.post) {
       setData({ ...data, post: 'Testing...' });
-      axios.post('/__api__/example', {
+      void axios.post('/__api__/example', {
         _csrf: config.CSRF,
         key: 'value',
       }).then((res) => {

@@ -30,6 +30,8 @@ it.skip('performs correct SSR and client-side hydration', async () => {
     `${outputPath}/main.js`,
     'utf8',
   ) as string;
-  await act(() => new Function(js)()); // eslint-disable-line no-new-func
+  // TODO: Double check this: disabling so many ESLint rules at once is not
+  // a good sign.
+  await act(() => new Function(js)()); // eslint-disable-line @typescript-eslint/no-unsafe-call, no-new-func, @typescript-eslint/no-implied-eval, @typescript-eslint/no-unsafe-return
   expect(document.querySelector('#react-view')!.innerHTML).toBe(view);
 });

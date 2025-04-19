@@ -8,8 +8,8 @@ import Routes from 'routes';
 
 const Application: React.FunctionComponent = () => (
   <MetaTags
-    title="Dr. Pogodin's React Starter"
     description="Yet another webapp based on Dr. Pogodin's React Starter Kit"
+    title="Dr. Pogodin's React Starter"
   >
     <Routes />
   </MetaTags>

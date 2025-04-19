@@ -1,6 +1,7 @@
 /**
  * Common configuration.
  */
+/* global module */
 
 module.exports = {
   /* Base URL for example docs (hosted inside @dr.pogodin/react-utils repo). */

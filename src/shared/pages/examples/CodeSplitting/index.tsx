@@ -10,7 +10,7 @@ import {
 const SplitComponent = splitComponent({
   chunkName: 'code-split-example',
   getComponent:
-    () => import(/* webpackChunkName: 'code-split-example' */ './Component'),
+    async () => import(/* webpackChunkName: 'code-split-example' */ './Component'),
   placeholder: <Throbber />,
 });
 

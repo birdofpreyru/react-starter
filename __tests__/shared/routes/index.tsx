@@ -3,6 +3,9 @@
 import { MemoryRouter } from 'react-router';
 import { mockClientSide, snapshot } from '@dr.pogodin/react-utils/jest';
 
+import type * as ReactUtilsM from '@dr.pogodin/react-utils';
+import type * as RoutesM from 'routes';
+
 test('Matches shallow snapshot', async () => {
   mockClientSide();
   window.REACT_UTILS_INJECTION = {
@@ -11,8 +14,10 @@ test('Matches shallow snapshot', async () => {
       'react-examples': [],
     },
   };
-  const { GlobalStateProvider, time } = require('@dr.pogodin/react-utils');
-  const Routes = require('routes').default;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const { GlobalStateProvider, time } = require('@dr.pogodin/react-utils') as typeof ReactUtilsM;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const Routes = (require('routes') as typeof RoutesM).default;
   await snapshot(
     <GlobalStateProvider initialState={{}}>
       <MemoryRouter>

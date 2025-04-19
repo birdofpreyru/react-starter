@@ -24,23 +24,23 @@ import YouTubeVideo from 'pages/examples/YouTubeVideo';
 
 const ExampleRoutes: React.FunctionComponent = () => (
   <Routes>
-    <Route index element={<Content />} />
-    <Route path="api-client" element={<ApiClient />} />
-    <Route path="async-global-data" element={<AsyncGlobalData />} />
-    <Route path="code-splitting" element={<CodeSplittingExample />} />
-    <Route path="buttons" element={<Buttons />} />
-    <Route path="global-state" element={<GlobalState />} />
-    <Route path="input-form-components" element={<InputFormComponents />} />
-    <Route path="links/*" element={<LinkTests />} />
-    <Route path="modal" element={<ModalExample />} />
-    <Route path="page-layout" element={<PageLayout />} />
-    <Route path="react-themes" element={<ReactThemes />} />
-    <Route path="svg" element={<Svg />} />
-    <Route path="throbber" element={<Throbber />} />
-    <Route path="time-hooks" element={<TimeHooks />} />
-    <Route path="tooltip" element={<Tooltip />} />
-    <Route path="youtube-video" element={<YouTubeVideo />} />
-    <Route path="*" element={<Error404 />} />
+    <Route element={<Content />} index />
+    <Route element={<ApiClient />} path="api-client" />
+    <Route element={<AsyncGlobalData />} path="async-global-data" />
+    <Route element={<CodeSplittingExample />} path="code-splitting" />
+    <Route element={<Buttons />} path="buttons" />
+    <Route element={<GlobalState />} path="global-state" />
+    <Route element={<InputFormComponents />} path="input-form-components" />
+    <Route element={<LinkTests />} path="links/*" />
+    <Route element={<ModalExample />} path="modal" />
+    <Route element={<PageLayout />} path="page-layout" />
+    <Route element={<ReactThemes />} path="react-themes" />
+    <Route element={<Svg />} path="svg" />
+    <Route element={<Throbber />} path="throbber" />
+    <Route element={<TimeHooks />} path="time-hooks" />
+    <Route element={<Tooltip />} path="tooltip" />
+    <Route element={<YouTubeVideo />} path="youtube-video" />
+    <Route element={<Error404 />} path="*" />
   </Routes>
 );
 

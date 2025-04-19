@@ -101,12 +101,18 @@ const ButtonsDemo: React.FunctionComponent = () => (
     <Link to="..">&lArr; Content</Link>
     <h1>Buttons</h1>
     <p>
-      <Link to={`${config.DOCS_BASE}/button.md`} openNewTab>
+      <Link openNewTab to={`${config.DOCS_BASE as string}/button.md`}>
         Full Reference
       </Link>
     </p>
     <h3>Basic Button Example</h3>
-    <Button onClick={() => alert('Button Clicked')}>Button</Button>
+    <Button
+      onClick={() => {
+        alert('Button Clicked'); // eslint-disable-line no-alert
+      }}
+    >
+      Button
+    </Button>
     <Button
       openNewTab
       to="https://dr.pogodin.studio"
@@ -114,8 +120,10 @@ const ButtonsDemo: React.FunctionComponent = () => (
       Button-Like Link
     </Button>
     <Button
-      // eslint-disable-next-line no-alert
-      onClick={() => alert('I have been clicked!')}
+      onClick={() => {
+        // eslint-disable-next-line no-alert
+        alert('I have been clicked!');
+      }}
       openNewTab
       to="https://dr.pogodin.studio"
     >
@@ -130,9 +138,9 @@ const ButtonsDemo: React.FunctionComponent = () => (
     <h5>With <em>Ad Hoc</em> Themes</h5>
     <Button theme={adhocTheme}>Button</Button>
     <Button
+      openNewTab
       theme={adhocTheme}
       to="https://dr.pogodin.studio"
-      openNewTab
     >
       Button-Like Link
     </Button>
@@ -144,7 +152,7 @@ const ButtonsDemo: React.FunctionComponent = () => (
     <h5>With Context Themes</h5>
     <ThemeProvider themes={{ Button: contextTheme }}>
       <Button>Button</Button>
-      <Button to="https://dr.pogodin.studio" openNewTab>
+      <Button openNewTab to="https://dr.pogodin.studio">
         Button-Like Link
       </Button>
       <Button disabled>Disabled Button</Button>

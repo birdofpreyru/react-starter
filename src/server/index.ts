@@ -5,7 +5,8 @@
 import fs from 'fs';
 import path from 'path';
 
-import { type Request } from 'express';
+import type { Request } from 'express';
+import type { Configuration } from 'webpack';
 
 import { server as serverFactory } from '@dr.pogodin/react-utils';
 
@@ -16,32 +17,38 @@ const mode = process.env.NODE_ENV;
 /* TODO: A quick workaround to pass build-time webpack config at the startup
  * of production build, without depedencies on development stuff. A more
  * elegant way to achieve the same will come later. */
-let webpackConfig;
+let webpackConfig: Configuration;
 if (mode === 'production') {
-  webpackConfig = path.resolve(__dirname, '../../.build-webpack-config.json');
-  webpackConfig = JSON.parse(fs.readFileSync(webpackConfig, 'utf-8'));
+  const webpackConfigPath = path.resolve(__dirname, '../../.build-webpack-config.json');
+  webpackConfig = JSON.parse(fs.readFileSync(webpackConfigPath, 'utf-8')) as Configuration;
 } else {
-  /* eslint-disable global-require */
-  webpackConfig = require('../../webpack.config');
-  if ('default' in webpackConfig) webpackConfig = webpackConfig.default;
-  webpackConfig = webpackConfig(mode);
-  /* eslint-enable global-require */
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  const tmp = require('../../webpack.config') as ((m: string | undefined) => Configuration) | {
+    default: (m: string | undefined) => Configuration;
+  };
+  const tmp2 = 'default' in tmp ? tmp.default : tmp;
+  webpackConfig = tmp2(mode);
 }
 
-async function beforeRender(req: Request) {
+function beforeRender(req: Request) {
   return {
     initialState: {
+      // TODO: Test, if it is safe to replace the operator in question by ??
+      // eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing
       domain: `${req.protocol}://${req.headers.host || req.hostname}`,
     },
   };
 }
 
+// TODO: Is there are cleaner way to do the same?
+// eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace global {
   let KEEP_BUILD_INFO: boolean;
 }
 
 global.KEEP_BUILD_INFO = true;
-serverFactory!(webpackConfig, {
+
+void serverFactory!(webpackConfig, {
   Application,
   beforeRender,
   devMode: mode === 'development',
@@ -52,10 +59,10 @@ serverFactory!(webpackConfig, {
      * and request body, received from the caller. */
     server.use('/__api__/example', (req, res) => {
       res.json({
-        method: req.method,
+        body: req.body as unknown,
         headers: req.headers,
+        method: req.method,
         query: req.query,
-        body: req.body,
       });
     });
   },

@@ -2,12 +2,14 @@
 
 import Application from 'shared/app';
 
+import type * as ReactUtilsM from '@dr.pogodin/react-utils';
+
 import { snapshot } from '@dr.pogodin/react-utils/jest';
 
 let mockDevFrontendMode = false;
 
-jest.mock('@dr.pogodin/react-utils', () => {
-  const TRU = jest.requireActual('@dr.pogodin/react-utils');
+jest.mock<typeof ReactUtilsM>('@dr.pogodin/react-utils', () => {
+  const TRU: typeof ReactUtilsM = jest.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
     isomorphy: {
@@ -21,10 +23,10 @@ jest.mock('@dr.pogodin/react-utils', () => {
 // attempt to render into virtual DOM, which does not quite work unless
 // the app is correctly initialized... will do later.
 test.skip('Matches shallow snapshot', () => {
-  snapshot(<Application />);
+  void snapshot(<Application />);
 });
 
 test.skip('Matches shallow snapshot in dev mode', () => {
   mockDevFrontendMode = true;
-  snapshot(<Application />);
+  void snapshot(<Application />);
 });

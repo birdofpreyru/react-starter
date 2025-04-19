@@ -37,8 +37,8 @@ const ReactThemes: React.FunctionComponent = () => (
       />
       <ThemedComponentOLD
         label="Purple"
-        themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
         theme={adhocTheme}
+        themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
       />
     </ThemeProvider>
   </PageLayout>

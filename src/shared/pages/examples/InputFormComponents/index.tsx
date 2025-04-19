@@ -23,15 +23,16 @@ import './style.scss';
 const SAMPLE_OPTIONS = [{
   name: 'Option #1',
   value: 'option1',
-}, {
+},
+{
   name: 'Option #2',
   value: 'option2',
-}, {
+},
+{
   value: 'option3',
 },
 'option #4',
-'An option with quite a long name',
-];
+'An option with quite a long name'];
 
 const InputFormComponents: React.FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
@@ -65,7 +66,9 @@ const InputFormComponents: React.FunctionComponent = () => {
       <Checkbox
         checked={checked}
         label="Sample <Checkbox>"
-        onChange={(e) => setChecked(e.target.checked)}
+        onChange={(e) => {
+          setChecked(e.target.checked);
+        }}
       />
       <Checkbox
         checked={checked3}
@@ -121,7 +124,9 @@ const InputFormComponents: React.FunctionComponent = () => {
       />
       <Input
         label="Managed via the global state"
-        onChange={(e) => setValue(e.target.value)}
+        onChange={(e) => {
+          setValue(e.target.value);
+        }}
         placeholder="Try me"
         value={value}
       />
@@ -129,14 +134,18 @@ const InputFormComponents: React.FunctionComponent = () => {
       <h2>Native Dropdown</h2>
       <Dropdown
         label="Native <Dropdown>"
-        onChange={(e) => setControlledDropdownValue(e.target.value)}
+        onChange={(e) => {
+          setControlledDropdownValue(e.target.value);
+        }}
         options={SAMPLE_OPTIONS}
         value={controlledDropdownValue}
       />
       <div styleName="testFlexContainer01">
         <Dropdown
           label="Dropdown inside narrow flex-container"
-          onChange={(e) => setControlledDropdownValue(e.target.value)}
+          onChange={(e) => {
+            setControlledDropdownValue(e.target.value);
+          }}
           options={SAMPLE_OPTIONS}
           value={controlledDropdownValue}
         />
@@ -144,7 +153,9 @@ const InputFormComponents: React.FunctionComponent = () => {
       <div styleName="testFlexContainer02">
         <Dropdown
           label="Dropdown inside narrow flex-container"
-          onChange={(e) => setControlledDropdownValue(e.target.value)}
+          onChange={(e) => {
+            setControlledDropdownValue(e.target.value);
+          }}
           options={SAMPLE_OPTIONS}
           value={controlledDropdownValue}
         />
@@ -152,7 +163,9 @@ const InputFormComponents: React.FunctionComponent = () => {
       <div styleName="testFlexContainer03">
         <Dropdown
           label="Dropdown inside narrow flex-container"
-          onChange={(e) => setControlledDropdownValue(e.target.value)}
+          onChange={(e) => {
+            setControlledDropdownValue(e.target.value);
+          }}
           options={SAMPLE_OPTIONS}
           theme={stretchingDropdownTheme}
           value={controlledDropdownValue}
@@ -161,7 +174,9 @@ const InputFormComponents: React.FunctionComponent = () => {
 
       <h2>Text Area</h2>
       <TextArea
-        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => setTaValue(e.target.value)}
+        onChange={(e: React.ChangeEvent<HTMLTextAreaElement>) => {
+          setTaValue(e.target.value);
+        }}
         placeholder="Example TextArea"
         value={taValue}
       />
@@ -177,15 +192,15 @@ const InputFormComponents: React.FunctionComponent = () => {
 
       <h3>CSRF Test</h3>
       <Button
-        onClick={async () => {
-          await axios.post('/__api__/example');
+        onClick={() => {
+          void axios.post('/__api__/example');
         }}
       >
         Fail CSRF Protection
       </Button>
       <Button
-        onClick={async () => {
-          await axios.post('/__api__/example', {
+        onClick={() => {
+          void axios.post('/__api__/example', {
             _csrf: config.CSRF,
           });
         }}
