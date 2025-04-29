@@ -10,11 +10,6 @@ import { merge } from 'webpack-merge';
 
 import customDefaultConfig from './default';
 
-// eslint-disable-next-line @typescript-eslint/no-namespace
-declare namespace global {
-  const KEEP_BUILD_INFO: object;
-}
-
 export default function factory(options = {}): Configuration {
   const standardProductionConfig = standardConfigFactory({
     babelEnv: 'production',

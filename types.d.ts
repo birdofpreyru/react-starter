@@ -1,3 +1,6 @@
+// eslint-disable-next-line no-var
+declare var KEEP_BUILD_INFO: boolean | object;
+
 declare module '*.jpg' {
   export default string;
 }
@@ -7,9 +10,11 @@ declare module '*.png' {
 }
 
 declare module '*.svg' {
-  import type { ComponentType, SVGAttributes } from 'react';
+  import type { ComponentType, Ref, SVGAttributes } from 'react';
 
-  const component: ComponentType<SVGAttributes<HTMLElement>>;
+  const component: ComponentType<SVGAttributes<HTMLElement>> & {
+    ref: Ref<SVGElement>;
+  };
 
   export default component;
 }
@@ -18,6 +23,7 @@ declare module '*.svg' {
 declare namespace React {
   // This allows all JSX elements to have additional "styleName" attribute,
   // handled by "@dr.pogodin/babel-plugin-react-css-modules".
+  // eslint-disable-next-line @typescript-eslint/consistent-type-definitions
   interface Attributes {
     styleName?: string;
   }
