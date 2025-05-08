@@ -40,7 +40,7 @@
     "npm": ">=9"
   },
   "dependencies": {
-    "@dr.pogodin/react-utils": "^1.43.9",
+    "@dr.pogodin/react-utils": "^1.43.10",
     "axios": "^1.9.0",
     "cross-env": "^7.0.3",
     "dayjs": "^1.11.13",
@@ -58,7 +58,7 @@
     "@babel/register": "^7.27.1",
     "@dr.pogodin/babel-plugin-transform-assets": "^1.2.4",
     "@dr.pogodin/babel-preset-svgr": "^1.9.0",
-    "@dr.pogodin/eslint-configs": "^0.0.5",
+    "@dr.pogodin/eslint-configs": "^0.0.6",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.6.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.3.0",
