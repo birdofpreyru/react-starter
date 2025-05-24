@@ -2,11 +2,13 @@
 declare var KEEP_BUILD_INFO: boolean | object;
 
 declare module '*.jpg' {
-  export default string;
+  const path: string;
+  export default path;
 }
 
 declare module '*.png' {
-  export default string;
+  const path: string;
+  export default path;
 }
 
 declare module '*.svg' {

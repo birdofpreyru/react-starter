@@ -1,6 +1,6 @@
-import type * as SharedM from 'shared';
-
 import type * as ReactUtilsM from '@dr.pogodin/react-utils';
+
+import type * as SharedM from 'shared';
 
 jest.mock<typeof SharedM>('shared', () => ({
   default: 'APPLICATION',

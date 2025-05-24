@@ -1,10 +1,9 @@
 /** @jest-environment jsdom */
 
-import Application from 'shared/app';
-
 import type * as ReactUtilsM from '@dr.pogodin/react-utils';
-
 import { snapshot } from '@dr.pogodin/react-utils/jest';
+
+import Application from 'shared/app';
 
 let mockDevFrontendMode = false;
 
