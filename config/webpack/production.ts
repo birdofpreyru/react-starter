@@ -1,6 +1,6 @@
 /* eslint-disable import/no-extraneous-dependencies */
 
-import * as path from 'path';
+import * as path from 'node:path';
 
 import standardConfigFactory from
   '@dr.pogodin/react-utils/config/webpack/app-production';

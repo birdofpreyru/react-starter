@@ -123,6 +123,7 @@ const InputFormComponents: React.FunctionComponent = () => {
         type="url"
       />
       <Input
+        error="Error message"
         label="Managed via the global state"
         onChange={(e) => {
           setValue(e.target.value);
@@ -130,6 +131,12 @@ const InputFormComponents: React.FunctionComponent = () => {
         placeholder="Try me"
         value={value}
       />
+      <Input
+        error
+        label="Input label"
+      >
+        Input child.
+      </Input>
 
       <h2>Native Dropdown</h2>
       <Dropdown
