@@ -17,25 +17,19 @@ type StateT = {
 const ApiClient: React.FunctionComponent = () => {
   const [data, setData] = useState<StateT>({});
   useEffect(() => {
-    if (!data.get) {
-      setData({ ...data, get: 'Testing...' });
-      void axios.get('/__api__/example')
-        .then((res) => {
-          const get = JSON.stringify(res, null, 2);
-          setData({ ...data, get });
-        });
-    }
-    if (!data.post) {
-      setData({ ...data, post: 'Testing...' });
-      void axios.post('/__api__/example', {
-        _csrf: config.CSRF,
-        key: 'value',
-      }).then((res) => {
-        const post = JSON.stringify(res, null, 2);
-        setData({ ...data, post });
+    void axios.get('/__api__/example')
+      .then((res) => {
+        const get = JSON.stringify(res, null, 2);
+        setData((prev) => ({ ...prev, get }));
       });
-    }
-  }, [data]);
+    void axios.post('/__api__/example', {
+      _csrf: config.CSRF,
+      key: 'value',
+    }).then((res) => {
+      const post = JSON.stringify(res, null, 2);
+      setData((prev) => ({ ...prev, post }));
+    });
+  }, []);
 
   return (
     <PageLayout>
@@ -46,9 +40,9 @@ const ApiClient: React.FunctionComponent = () => {
         <li><Link to="#post-test">POST Test</Link></li>
       </ul>
       <h3 id="get-test">GET Test</h3>
-      <pre>{ data.get }</pre>
+      <pre>{ data.get ?? 'Testing...' }</pre>
       <h3 id="post-test">POST Test</h3>
-      <pre>{ data.post }</pre>
+      <pre>{ data.post ?? 'Testing...' }</pre>
     </PageLayout>
   );
 };
