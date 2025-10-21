@@ -8,6 +8,13 @@ import Application from 'shared/app';
 let mockDevFrontendMode = false;
 
 jest.mock<typeof ReactUtilsM>('@dr.pogodin/react-utils', () => {
+  // @ts-expect-error "Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature."
+  global.REACT_UTILS_INJECTION = {
+    CHUNK_GROUPS: {
+      'code-split-example': [],
+      'react-examples': [],
+    },
+  };
   const TRU: typeof ReactUtilsM = jest.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
