@@ -5,6 +5,8 @@
   // resolution mechanics.
   "extends": "@dr.pogodin/react-utils/config/typescript/base.json",
 
+  "exclude": [],
+
   "compilerOptions": {
     // BEWARE: Different settings are likely to transform dynamic import()
     // statements in the code, thus breaking Webpack's code splitting.
