@@ -1,5 +1,7 @@
-// eslint-disable-next-line no-var
+/* eslint-disable no-var */
 declare var KEEP_BUILD_INFO: boolean | object;
+declare var SCENE_INIT_PROMISE: Promise<void> | undefined;
+/* eslint-enable no-var */
 
 declare module '*.jpg' {
   const path: string;

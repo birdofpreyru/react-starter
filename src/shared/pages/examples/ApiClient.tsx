@@ -7,7 +7,7 @@
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 
-import { config, Link, PageLayout } from '@dr.pogodin/react-utils';
+import { getConfig, Link, PageLayout } from '@dr.pogodin/react-utils';
 
 type StateT = {
   get?: string;
@@ -23,7 +23,7 @@ const ApiClient: React.FunctionComponent = () => {
         setData((prev) => ({ ...prev, get }));
       });
     void axios.post('/__api__/example', {
-      _csrf: config.CSRF,
+      _csrf: getConfig(true).CSRF,
       key: 'value',
     }).then((res) => {
       const post = JSON.stringify(res, null, 2);

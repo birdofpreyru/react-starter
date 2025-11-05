@@ -1,8 +1,8 @@
 /* global alert */
 
 import {
-  config,
   Button,
+  getConfig,
   Link,
   PageLayout,
   ThemeProvider,
@@ -101,7 +101,7 @@ const ButtonsDemo: React.FunctionComponent = () => (
     <Link to="..">&lArr; Content</Link>
     <h1>Buttons</h1>
     <p>
-      <Link openNewTab to={`${config.DOCS_BASE as string}/button.md`}>
+      <Link openNewTab to={`${getConfig(true).DOCS_BASE as string}/button.md`}>
         Full Reference
       </Link>
     </p>

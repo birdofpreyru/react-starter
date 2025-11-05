@@ -15,7 +15,7 @@ const Application = (require('../shared') as typeof SharedM).default;
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
 const isHmrEnabled = !!(module as any).hot;
 
-client!(Application, {
+void client!(Application, {
   // With HMR hydration may throw hydration errors in subsequent re-renders.
   dontHydrate: isHmrEnabled,
 });

@@ -2,11 +2,11 @@ import axios from 'axios';
 import { useState } from 'react';
 
 import {
-  config,
   Button,
   Checkbox,
   CustomDropdown,
   Dropdown,
+  getConfig,
   Input,
   Link,
   PageLayout,
@@ -208,7 +208,7 @@ const InputFormComponents: React.FunctionComponent = () => {
       <Button
         onClick={() => {
           void axios.post('/__api__/example', {
-            _csrf: config.CSRF,
+            _csrf: getConfig(true).CSRF,
           });
         }}
       >
