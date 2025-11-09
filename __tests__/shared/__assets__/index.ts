@@ -1,4 +1,4 @@
-import { client } from '@dr.pogodin/react-utils';
+import { launchClient } from '@dr.pogodin/react-utils/client';
 import Scene from './Scene';
 
-global.SCENE_INIT_PROMISE = client!(Scene);
+global.SCENE_INIT_PROMISE = launchClient(Scene);

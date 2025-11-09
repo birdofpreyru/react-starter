@@ -1,4 +1,4 @@
-import type * as ReactUtilsM from '@dr.pogodin/react-utils';
+import type * as ReactUtilsClientM from '@dr.pogodin/react-utils/client';
 
 import type * as SharedM from 'shared';
 
@@ -6,22 +6,19 @@ jest.mock<typeof SharedM>('shared', () => ({
   default: 'APPLICATION',
 }) as unknown as typeof SharedM);
 
-jest.mock<typeof ReactUtilsM>('@dr.pogodin/react-utils', () => {
-  const TRU: typeof ReactUtilsM = jest.requireActual('@dr.pogodin/react-utils');
-  return {
-    ...TRU,
-    client: jest.fn(),
-  };
-});
+const mockClient = jest.fn();
+
+jest.mock<typeof ReactUtilsClientM>('@dr.pogodin/react-utils/client', () => ({
+  launchClient: mockClient,
+}));
 
 // eslint-disable-next-line import/no-unassigned-import, @typescript-eslint/no-require-imports
 require('client');
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { client } = require('@dr.pogodin/react-utils') as typeof ReactUtilsM;
-
-test('Passes basic testing', () => {
-  const mClient = client as unknown as jest.MockedFn<Exclude<typeof ReactUtilsM['client'], null | undefined>>;
+test('Passes basic testing', async () => {
+  const { launchClient } = await import(/* webpackChunkName: "test" */ '@dr.pogodin/react-utils/client');
+  const mClient = launchClient as unknown as
+    jest.MockedFn<typeof ReactUtilsClientM['launchClient']>;
   expect(mClient.mock.calls[0]).toStrictEqual(['APPLICATION', {
     dontHydrate: false,
   }]);

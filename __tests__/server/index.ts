@@ -1,6 +1,6 @@
 // TODO: Revise this module - too much forced type casting and disabled rules here.
 
-import type * as ReactUtilsM from '@dr.pogodin/react-utils';
+import type * as ReactUtilsServerM from '@dr.pogodin/react-utils/server';
 
 import type * as SharedM from 'shared';
 import type * as WebpackConfigM from '../../webpack.config';
@@ -8,22 +8,24 @@ import type * as WebpackConfigM from '../../webpack.config';
 jest.mock<typeof SharedM>('shared', () => 'APPLICATION' as unknown as typeof SharedM);
 jest.mock<typeof WebpackConfigM>('../../webpack.config', () => (() => ({})) as unknown as typeof WebpackConfigM);
 
-jest.mock<typeof ReactUtilsM>('@dr.pogodin/react-utils', () => {
-  const TRU: typeof ReactUtilsM = jest.requireActual('@dr.pogodin/react-utils');
+const mockLaunchServer = jest.fn();
+
+jest.mock<typeof ReactUtilsServerM>('@dr.pogodin/react-utils/server', () => {
+  const TRU: typeof ReactUtilsServerM = jest.requireActual('@dr.pogodin/react-utils/server');
   return {
     ...TRU,
-    server: jest.fn(),
-  } as unknown as typeof ReactUtilsM;
+    launchServer: mockLaunchServer,
+  } as unknown as typeof ReactUtilsServerM;
 });
 
 // eslint-disable-next-line import/no-unassigned-import, @typescript-eslint/no-require-imports
 require('server');
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports
-const { server } = require('@dr.pogodin/react-utils') as typeof ReactUtilsM;
+const { launchServer } = require('@dr.pogodin/react-utils/server') as typeof ReactUtilsServerM;
 
 test('Passes basic tests', () => {
-  const mServer = server as unknown as jest.MockedFn<Exclude<typeof ReactUtilsM['server'], null>>;
+  const mServer = launchServer as unknown as jest.MockedFn<typeof ReactUtilsServerM['launchServer']>;
 
   expect(mServer.mock.calls).toHaveLength(1);
   expect(mServer.mock.calls[0]).toMatchSnapshot();

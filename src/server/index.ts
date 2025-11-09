@@ -8,7 +8,7 @@ import path from 'node:path';
 import type { Request } from 'express';
 import type { Configuration } from 'webpack';
 
-import { server as serverFactory } from '@dr.pogodin/react-utils';
+import { launchServer } from '@dr.pogodin/react-utils/server';
 
 import Application from 'shared';
 
@@ -48,7 +48,7 @@ declare namespace global {
 
 global.KEEP_BUILD_INFO = true;
 
-void serverFactory!(webpackConfig, {
+void launchServer(webpackConfig, {
   Application,
   beforeRender,
   devMode: mode === 'development',
