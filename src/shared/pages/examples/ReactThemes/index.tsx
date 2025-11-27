@@ -1,7 +1,7 @@
 import {
   Link,
   PageLayout,
-  themed,
+  THEME_PRIORITY,
   ThemeProvider,
 } from '@dr.pogodin/react-utils';
 
@@ -33,12 +33,12 @@ const ReactThemes: React.FunctionComponent = () => (
     <ThemeProvider themes={{ ThemedComponent: contextTheme }}>
       <ThemedComponentOLD
         label="Green"
-        themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
+        themePriority={THEME_PRIORITY.ADHOC_DEFAULT_CONTEXT}
       />
       <ThemedComponentOLD
         label="Purple"
         theme={adhocTheme}
-        themePriority={themed.PRIORITY.ADHOC_DEFAULT_CONTEXT}
+        themePriority={THEME_PRIORITY.ADHOC_DEFAULT_CONTEXT}
       />
     </ThemeProvider>
   </PageLayout>

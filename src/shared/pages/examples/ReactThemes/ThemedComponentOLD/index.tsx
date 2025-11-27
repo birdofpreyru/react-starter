@@ -1,18 +1,30 @@
-import { type Theme, themed } from '@dr.pogodin/react-utils';
+import type { FunctionComponent } from 'react';
+
+import { type Theme, type THEME_PRIORITY, useTheme } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';
 
 type PropsT = {
   label: string;
-  theme: Theme<'container' | 'content'>;
+  theme?: Theme<'container' | 'content'>;
+  themePriority?: THEME_PRIORITY;
 };
 
-const Component: React.FunctionComponent<PropsT> = ({ label, theme }) => (
-  <div className={theme.container}>
-    <div className={theme.content}>
-      {label}
+const Component: FunctionComponent<PropsT> = ({
+  label,
+  theme,
+  themePriority,
+}) => {
+  const composed = useTheme('ThemedComponent', defaultTheme, theme, {
+    themePriority,
+  });
+  return (
+    <div className={composed.container}>
+      <div className={composed.content}>
+        {label}
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
-export default themed(Component, 'ThemedComponent', defaultTheme);
+export default Component;

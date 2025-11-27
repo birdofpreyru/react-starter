@@ -5,8 +5,15 @@ import type * as ReactUtilsServerM from '@dr.pogodin/react-utils/server';
 import type * as SharedM from 'shared';
 import type * as WebpackConfigM from '../../webpack.config';
 
-jest.mock<typeof SharedM>('shared', () => 'APPLICATION' as unknown as typeof SharedM);
-jest.mock<typeof WebpackConfigM>('../../webpack.config', () => (() => ({})) as unknown as typeof WebpackConfigM);
+jest.mock<typeof SharedM>(
+  '../../src/shared',
+  () => 'APPLICATION' as unknown as typeof SharedM,
+);
+
+jest.mock<typeof WebpackConfigM>(
+  '../../webpack.config',
+  () => (() => ({})) as unknown as typeof WebpackConfigM,
+);
 
 const mockLaunchServer = jest.fn();
 

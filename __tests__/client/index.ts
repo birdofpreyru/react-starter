@@ -2,7 +2,7 @@ import type * as ReactUtilsClientM from '@dr.pogodin/react-utils/client';
 
 import type * as SharedM from 'shared';
 
-jest.mock<typeof SharedM>('shared', () => ({
+jest.mock<typeof SharedM>('../../src/shared', () => ({
   default: 'APPLICATION',
 }) as unknown as typeof SharedM);
 
