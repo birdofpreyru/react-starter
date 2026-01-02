@@ -34,7 +34,7 @@ const { launchServer } = require('@dr.pogodin/react-utils/server') as typeof Rea
 test('Passes basic tests', () => {
   const mServer = launchServer as unknown as jest.MockedFn<typeof ReactUtilsServerM['launchServer']>;
 
-  expect(mServer.mock.calls).toHaveLength(1);
+  expect(mServer).toHaveBeenCalledTimes(1);
   expect(mServer.mock.calls[0]).toMatchSnapshot();
   const [, options] = mServer.mock.calls[0]!;
   const { beforeRender } = options!;
