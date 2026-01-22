@@ -2,7 +2,7 @@
  * Root router of the app.
  */
 
-import { splitComponent, Throbber } from '@dr.pogodin/react-utils';
+import { Throbber, splitComponent } from '@dr.pogodin/react-utils';
 
 const Examples = splitComponent({
   chunkName: 'react-examples',

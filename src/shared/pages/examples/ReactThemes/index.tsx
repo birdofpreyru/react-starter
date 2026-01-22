@@ -7,8 +7,8 @@ import {
 
 import ThemedComponentOLD from './ThemedComponentOLD';
 
-import contextTheme from './ThemedComponentOLD/context.scss';
 import adhocTheme from './ThemedComponentOLD/adhoc.scss';
+import contextTheme from './ThemedComponentOLD/context.scss';
 
 const ReactThemes: React.FunctionComponent = () => (
   <PageLayout>

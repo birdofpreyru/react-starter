@@ -3,8 +3,8 @@
 import {
   Link,
   PageLayout,
-  splitComponent,
   Throbber,
+  splitComponent,
 } from '@dr.pogodin/react-utils';
 
 const SplitComponent = splitComponent({

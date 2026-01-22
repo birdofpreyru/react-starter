@@ -1,6 +1,6 @@
 // Simple 404 error page.
 
-import { getSsrContext, PageLayout } from '@dr.pogodin/react-utils';
+import { PageLayout, getSsrContext } from '@dr.pogodin/react-utils';
 
 const Error404Page: React.FunctionComponent = () => {
   const ssrContext = getSsrContext(false);

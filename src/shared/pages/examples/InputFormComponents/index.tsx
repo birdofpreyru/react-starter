@@ -6,14 +6,14 @@ import {
   Checkbox,
   CustomDropdown,
   Dropdown,
-  getConfig,
+  type ForceT,
   Input,
   Link,
   PageLayout,
   Switch,
   TextArea,
+  getConfig,
   useGlobalState,
-  type ForceT,
 } from '@dr.pogodin/react-utils';
 
 import stretchingDropdownTheme from './streching-dropdown.scss';
@@ -37,14 +37,14 @@ const SAMPLE_OPTIONS = [{
 const InputFormComponents: React.FunctionComponent = () => {
   const [checked, setChecked] = useState(false);
 
-  const [checked3, setChecked3] = useState<boolean | 'indeterminate'>('indeterminate');
+  const [checked3, setChecked3] = useState<'indeterminate' | boolean>('indeterminate');
 
   const [
     controlledDropdownValue,
     setControlledDropdownValue,
     // TODO: This <string | number> type is a temporary workaround for the issue
     // https://github.com/birdofpreyru/react-utils/issues/342
-  ] = useState<string | number>('option1');
+  ] = useState<number | string>('option1');
 
   const [value, setValue] = useGlobalState<ForceT, string>(
     'test-input-form-components-path',
@@ -78,11 +78,11 @@ const InputFormComponents: React.FunctionComponent = () => {
             case false:
               setChecked3('indeterminate');
               return;
-            case true:
-              setChecked3(false);
-              return;
             case 'indeterminate':
               setChecked3(true);
+              return;
+            case true:
+              setChecked3(false);
               return;
             default: throw Error('Bad checked value');
           }
@@ -97,11 +97,11 @@ const InputFormComponents: React.FunctionComponent = () => {
             case false:
               setChecked3('indeterminate');
               return;
-            case true:
-              setChecked3(false);
-              return;
             case 'indeterminate':
               setChecked3(true);
+              return;
+            case true:
+              setChecked3(false);
               return;
             default: throw Error('Bad checked value');
           }

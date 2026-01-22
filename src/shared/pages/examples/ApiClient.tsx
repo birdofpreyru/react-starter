@@ -5,9 +5,9 @@
  */
 
 import axios from 'axios';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-import { getConfig, Link, PageLayout } from '@dr.pogodin/react-utils';
+import { Link, PageLayout, getConfig } from '@dr.pogodin/react-utils';
 
 type StateT = {
   get?: string;

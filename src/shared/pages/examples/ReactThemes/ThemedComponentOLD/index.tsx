@@ -1,6 +1,6 @@
 import type { FunctionComponent } from 'react';
 
-import { type Theme, type THEME_PRIORITY, useTheme } from '@dr.pogodin/react-utils';
+import { type THEME_PRIORITY, type Theme, useTheme } from '@dr.pogodin/react-utils';
 
 import defaultTheme from './default.scss';
 

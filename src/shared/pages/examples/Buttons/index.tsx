@@ -2,10 +2,10 @@
 
 import {
   Button,
-  getConfig,
   Link,
   PageLayout,
   ThemeProvider,
+  getConfig,
 } from '@dr.pogodin/react-utils';
 
 import adhocTheme from './adhoc-theme.scss';
