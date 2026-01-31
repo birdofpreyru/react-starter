@@ -3,6 +3,7 @@
 // and that's break Jest tests, which do not support ES modules yet.
 
 import type * as ReactUtilsClientM from '@dr.pogodin/react-utils/client';
+
 import type * as SharedM from '../shared';
 
 // eslint-disable-next-line @typescript-eslint/no-require-imports

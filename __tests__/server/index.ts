@@ -3,6 +3,7 @@
 import type * as ReactUtilsServerM from '@dr.pogodin/react-utils/server';
 
 import type * as SharedM from 'shared';
+
 import type * as WebpackConfigM from '../../webpack.config';
 
 jest.mock<typeof SharedM>(

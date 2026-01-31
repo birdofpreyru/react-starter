@@ -2,11 +2,11 @@
 
 import * as path from 'node:path';
 
-import standardConfigFactory from
-  '@dr.pogodin/react-utils/config/webpack/app-production';
-
 import type { Configuration } from 'webpack';
 import { merge } from 'webpack-merge';
+
+import standardConfigFactory from
+  '@dr.pogodin/react-utils/config/webpack/app-production';
 
 import customDefaultConfig from './default';
 
