@@ -15,6 +15,14 @@ import InputFormComponents from 'pages/examples/InputFormComponents';
 import LinkTests from 'pages/examples/Links';
 import ModalExample from 'pages/examples/Modal';
 import PageLayout from 'pages/examples/PageLayout';
+
+import {
+  DrPogodinReactHelmet,
+  PureReact,
+  ReactHelmetAsync,
+  ReactHelmetContent,
+} from 'pages/examples/ReactHelmet';
+
 import ReactThemes from 'pages/examples/ReactThemes';
 import Svg from 'pages/examples/Svg';
 import Throbber from 'pages/examples/Throbber';
@@ -35,6 +43,13 @@ const ExampleRoutes: React.FunctionComponent = () => (
     <Route element={<LinkTests />} path="links/*" />
     <Route element={<ModalExample />} path="modal" />
     <Route element={<PageLayout />} path="page-layout" />
+
+    {/* TODO: Move these to a dedicated router. */}
+    <Route element={<ReactHelmetContent />} path="react-helmet" />
+    <Route element={<DrPogodinReactHelmet />} path="react-helmet/dr-pogodin-react-helmet" />
+    <Route element={<PureReact />} path="react-helmet/pure-react" />
+    <Route element={<ReactHelmetAsync />} path="react-helmet/react-helmet-async" />
+
     <Route element={<ReactThemes />} path="react-themes" />
     <Route element={<Svg />} path="svg" />
     <Route element={<Throbber />} path="throbber" />

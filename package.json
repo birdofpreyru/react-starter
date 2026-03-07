@@ -104,6 +104,7 @@
     "postcss-loader": "^8.2.1",
     "postcss-scss": "^4.0.9",
     "pretty": "^2.0.0",
+    "react-helmet-async": "^3.0.0",
     "react-refresh": "^0.18.0",
     "resolve-url-loader": "^5.0.0",
     "sass": "^1.97.3",

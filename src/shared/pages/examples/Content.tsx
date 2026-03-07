@@ -17,6 +17,7 @@ const Content: React.FunctionComponent = () => (
       <li><Link to="links">Link tests</Link></li>
       <li><Link to="modal">Modal</Link></li>
       <li><Link to="page-layout">Page layout</Link></li>
+      <li><Link to="react-helmet">React Helmet examples & tests</Link></li>
       <li><Link to="react-themes">React themes</Link></li>
       <li><Link to="svg">SVG demo</Link></li>
       <li><Link to="throbber">Throbber (activity indicator)</Link></li>
