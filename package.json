@@ -12,7 +12,7 @@
     "fix:styles": "./node_modules/.bin/stylelint **/*.scss --syntax scss --fix",
     "jest": "cross-env NODE_CONFIG_ENV=test ./node_modules/.bin/jest --config config/jest/default.js",
     "lint": "npm run lint:code && npm run lint:scss",
-    "lint:code": "./node_modules/.bin/eslint",
+    "lint:code": "./node_modules/.bin/eslint --cache",
     "lint:scss": "./node_modules/.bin/stylelint **/*.{css,scss}",
     "start": "cross-env NODE_ENV=production node build/server",
     "test": "npm run build:types-scss && npm run lint && npm run typecheck && npm run jest",
