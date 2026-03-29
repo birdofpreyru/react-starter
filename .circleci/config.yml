@@ -16,14 +16,14 @@ jobs:
           paths:
             - node_modules
       - run:
-          name: Unit-testing
-          command: npm test
-      - run:
           name: Trying dev build
           command: npm run build:dev
       - run:
           name: Trying prod build
           command: npm run build
+      - run:
+          name: Unit-testing
+          command: npm test
 
 workflows:
   version: 2

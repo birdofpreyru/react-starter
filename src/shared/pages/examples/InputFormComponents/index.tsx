@@ -107,6 +107,8 @@ const InputFormComponents: React.FunctionComponent = () => {
           }
         }}
       />
+      <Checkbox error label="Checkbox with error (A)" />
+      <Checkbox error="Error message qwe  wed qwed dw wed" label="Checkbox with error (B)" />
 
       <h2>Custom Dropdown</h2>
       <CustomDropdown
