@@ -48,5 +48,5 @@ jspm_packages
 # Misc files
 .build-info
 .build-webpack-config.json
+.eslintcache
 .vscode
-/.eslintcache
