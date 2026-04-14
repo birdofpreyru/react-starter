@@ -37,12 +37,12 @@
     "npm": ">=10.8"
   },
   "dependencies": {
-    "@dr.pogodin/react-utils": "^1.51.1",
+    "@dr.pogodin/react-utils": "^1.51.2",
     "axios": "^1.15.0",
     "cross-env": "^10.1.0",
     "dayjs": "^1.11.20",
     "react": "^19.2.5",
-    "react-router": "^7.14.0"
+    "react-router": "^7.14.1"
   },
   "devDependencies": {
     "@babel/cli": "^7.28.6",
@@ -81,7 +81,7 @@
     "@types/supertest": "^7.2.0",
     "@types/webpack": "^5.28.5",
     "@types/webpack-hot-middleware": "^2.25.12",
-    "autoprefixer": "^10.4.27",
+    "autoprefixer": "^10.5.0",
     "babel-jest": "^30.3.0",
     "babel-loader": "^10.1.1",
     "babel-plugin-add-import-extension": "^1.6.0",
