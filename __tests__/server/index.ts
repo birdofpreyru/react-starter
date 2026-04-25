@@ -23,7 +23,7 @@ jest.mock<typeof ReactUtilsServerM>('@dr.pogodin/react-utils/server', () => {
   return {
     ...TRU,
     launchServer: mockLaunchServer,
-  } as unknown as typeof ReactUtilsServerM;
+  };
 });
 
 // eslint-disable-next-line import/no-unassigned-import, @typescript-eslint/no-require-imports
