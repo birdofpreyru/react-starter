@@ -2,6 +2,7 @@
 
 import type * as ReactUtilsM from '@dr.pogodin/react-utils';
 import { snapshot } from '@dr.pogodin/react-utils/jest';
+import { jest, test } from '@jest/globals';
 
 import Application from 'shared/app';
 
@@ -18,10 +19,7 @@ jest.mock<typeof ReactUtilsM>('@dr.pogodin/react-utils', () => {
   const TRU: typeof ReactUtilsM = jest.requireActual('@dr.pogodin/react-utils');
   return {
     ...TRU,
-    isomorphy: {
-      ...TRU.isomorphy,
-      isDevBuild: () => mockDevFrontendMode,
-    },
+    isDevBuild: () => mockDevFrontendMode,
   };
 });
 
