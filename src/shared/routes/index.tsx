@@ -2,6 +2,8 @@
  * Root router of the app.
  */
 
+import type { FunctionComponent } from 'react';
+
 import { Throbber, splitComponent } from '@dr.pogodin/react-utils';
 
 const Examples = splitComponent({
@@ -11,6 +13,6 @@ const Examples = splitComponent({
   placeholder: <Throbber />,
 });
 
-const AppRoutes: React.FunctionComponent = () => <Examples />;
+const AppRoutes: FunctionComponent = () => <Examples />;
 
 export default AppRoutes;
