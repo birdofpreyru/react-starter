@@ -14,6 +14,7 @@
 // fine outside the react-utils.
 
 import { act, getGlobal } from '@dr.pogodin/react-utils/jest';
+import { expect, it } from '@jest/globals';
 
 const global = getGlobal();
 

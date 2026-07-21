@@ -2,11 +2,13 @@
  * Demo of SVG rendering.
  */
 
+import type { FunctionComponent } from 'react';
+
 import { Link, PageLayout } from '@dr.pogodin/react-utils';
 
 import Logo from './logo.svg';
 
-const Svg: React.FunctionComponent = () => (
+const Svg: FunctionComponent = () => (
   <PageLayout>
     <Link to="..">&lArr; Content</Link>
     <h1>SVG Demo</h1>

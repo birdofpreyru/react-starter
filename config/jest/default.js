@@ -1,6 +1,3 @@
-/* global module, require */
+import config from '@dr.pogodin/react-utils/config/jest/default';
 
-// eslint-disable-next-line import/no-commonjs
-const config = require('@dr.pogodin/react-utils/config/jest/default');
-
-module.exports = config;
+export default config;

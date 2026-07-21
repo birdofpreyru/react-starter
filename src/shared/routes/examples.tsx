@@ -2,6 +2,7 @@
  * Example routes.
  */
 
+import type { FunctionComponent } from 'react';
 import { Route, Routes } from 'react-router';
 
 import Error404 from 'pages/Error404';
@@ -23,7 +24,7 @@ import Tooltip from 'pages/examples/Tooltip';
 
 import YouTubeVideo from 'pages/examples/YouTubeVideo';
 
-const ExampleRoutes: React.FunctionComponent = () => (
+const ExampleRoutes: FunctionComponent = () => (
   <Routes>
     <Route element={<Content />} index />
     <Route element={<ApiClient />} path="api-client" />

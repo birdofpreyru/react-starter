@@ -8,12 +8,12 @@ import { merge } from 'webpack-merge';
 import standardConfigFactory from
   '@dr.pogodin/react-utils/config/webpack/app-production';
 
-import customDefaultConfig from './default';
+import customDefaultConfig from './default.ts';
 
 export default function factory(options = {}): Configuration {
   const standardProductionConfig = standardConfigFactory({
     babelEnv: 'production',
-    context: path.resolve(__dirname, '../..'),
+    context: path.resolve(import.meta.dirname, '../..'),
     entry: './src/client',
     keepBuildInfo: !!global.KEEP_BUILD_INFO,
     mode: 'production',

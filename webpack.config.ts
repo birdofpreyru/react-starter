@@ -2,13 +2,14 @@ import fs from 'node:fs';
 
 import type { Configuration } from 'webpack';
 
-import devWebpackConfig from './config/webpack/development';
-import prodWebpackConfig from './config/webpack/production';
+import devWebpackConfig from './config/webpack/development.ts';
+import prodWebpackConfig from './config/webpack/production.ts';
 
 export default function configFactory(env: string): Configuration {
   let baseFactory: () => Configuration;
   switch (env) {
     case 'development':
+    case 'test':
       baseFactory = devWebpackConfig;
       break;
     case 'production':
@@ -19,7 +20,7 @@ export default function configFactory(env: string): Configuration {
 
   const config = baseFactory();
   fs.writeFileSync(
-    `${__dirname}/.build-webpack-config.json`,
+    `${import.meta.dirname}/.build-webpack-config.json`,
     JSON.stringify(config),
   );
   return config;

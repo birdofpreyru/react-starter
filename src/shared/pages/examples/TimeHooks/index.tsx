@@ -1,4 +1,4 @@
-import UTC from 'dayjs/plugin/utc';
+import UTC from 'dayjs/plugin/utc.js';
 
 import { Link, PageLayout, time } from '@dr.pogodin/react-utils';
 

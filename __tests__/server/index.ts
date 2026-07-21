@@ -1,41 +1,57 @@
 // TODO: Revise this module - too much forced type casting and disabled rules here.
 
-import type * as ReactUtilsServerM from '@dr.pogodin/react-utils/server';
+import type { Mock } from 'jest-mock';
+import type { FunctionComponent } from 'react';
+
+import * as TRU from '@dr.pogodin/react-utils/server';
+import { expect, jest, test } from '@jest/globals';
 
 import type * as SharedM from 'shared';
 
 import type * as WebpackConfigM from '../../webpack.config';
 
-jest.mock<typeof SharedM>(
+jest.unstable_mockModule<typeof SharedM>(
   '../../src/shared',
-  () => 'APPLICATION' as unknown as typeof SharedM,
+  () => ({
+    default: 'APPLICATION' as unknown as FunctionComponent,
+  }),
 );
 
-jest.mock<typeof WebpackConfigM>(
+jest.unstable_mockModule<typeof WebpackConfigM>(
   '../../webpack.config',
-  () => (() => ({})) as unknown as typeof WebpackConfigM,
+  () => ({
+    default: () => ({}),
+  }),
 );
 
-const mockLaunchServer = jest.fn();
+const mockLaunchServer = jest.fn<typeof TRU.launchServer>();
 
-jest.mock<typeof ReactUtilsServerM>('@dr.pogodin/react-utils/server', () => {
-  const TRU: typeof ReactUtilsServerM = jest.requireActual('@dr.pogodin/react-utils/server');
-  return {
+jest.unstable_mockModule<typeof TRU>(
+  '@dr.pogodin/react-utils/server',
+  () => ({
     ...TRU,
     launchServer: mockLaunchServer,
-  };
-});
+  }),
+);
 
-// eslint-disable-next-line import/no-unassigned-import, @typescript-eslint/no-require-imports
-require('server');
+test('Passes basic tests', async () => {
+  const { launched } = await import('server');
+  await launched;
 
-// eslint-disable-next-line @typescript-eslint/no-require-imports
-const { launchServer } = require('@dr.pogodin/react-utils/server') as typeof ReactUtilsServerM;
+  const {
+    launchServer: launchReactUtilsServer,
+  } = await import('@dr.pogodin/react-utils/server');
 
-test('Passes basic tests', () => {
-  const mServer = launchServer as unknown as jest.MockedFn<typeof ReactUtilsServerM['launchServer']>;
+  const mServer = launchReactUtilsServer as unknown as
+    Mock<typeof TRU.launchServer>;
 
-  expect(mServer).toHaveBeenCalledTimes(1);
+  expect(launchReactUtilsServer).toHaveBeenCalledTimes(1);
+
+  // TODO: The first argument captures the Webpack config read by the server,
+  // which is unstable (might not exist in the local development / test environment,
+  // includes a bunch of machine-specific absolute paths).
+  mServer.mock.calls[0]![0] = {};
+
   expect(mServer.mock.calls[0]).toMatchSnapshot();
   const [, options] = mServer.mock.calls[0]!;
   const { beforeRender } = options!;

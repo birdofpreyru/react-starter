@@ -3,6 +3,7 @@
 import { GlobalStateProvider } from '@dr.pogodin/react-utils';
 
 import { snapshot } from '@dr.pogodin/react-utils/jest';
+import { test } from '@jest/globals';
 
 import Error404Page from 'pages/Error404';
 

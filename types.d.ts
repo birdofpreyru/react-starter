@@ -13,6 +13,11 @@ declare module '*.png' {
   export default path;
 }
 
+declare module '*.scss' {
+  const style: Record<string, string>;
+  export default style;
+}
+
 declare module '*.svg' {
   import type { ComponentType, Ref, SVGAttributes } from 'react';
 
