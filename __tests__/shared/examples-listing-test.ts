@@ -16,23 +16,28 @@
 import { act, getGlobal } from '@dr.pogodin/react-utils/jest';
 import { expect, it } from '@jest/globals';
 
-const global = getGlobal();
+const { ssrMarkup, webpackConfig, webpackOutputFs } = getGlobal();
 
 // Fails after update of E2eSsrEnv to throw on Webpack compilation failures,
 // as the current setup fails to build SASS because it can't correctly resolve
 // aliased paths, like "styles/mixins", etc.
 // It is related to: https://github.com/birdofpreyru/react-utils/issues/263
 it.skip('performs correct SSR and client-side hydration', async () => {
-  document.write(global.ssrMarkup!);
-  const view = document.querySelector('#react-view')!.innerHTML;
+  if (!ssrMarkup) throw Error('Missing SSR markup');
+  document.write(ssrMarkup);
+  const view = document.querySelector('#react-view')?.innerHTML;
   expect(view).toMatchSnapshot();
-  const outputPath = global.webpackConfig!.output!.path;
-  const js = global.webpackOutputFs.readFileSync(
+
+  const outputPath = webpackConfig?.output?.path;
+  if (!outputPath) throw Error('Missing output path');
+
+  const js = webpackOutputFs.readFileSync(
     `${outputPath}/main.js`,
     'utf8',
   ) as string;
+
   // TODO: Double check this: disabling so many ESLint rules at once is not
   // a good sign.
   await act(() => new Function(js)()); // eslint-disable-line @typescript-eslint/no-unsafe-call, no-new-func, @typescript-eslint/no-implied-eval, @typescript-eslint/no-unsafe-return
-  expect(document.querySelector('#react-view')!.innerHTML).toBe(view);
+  expect(document.querySelector('#react-view')?.innerHTML).toBe(view);
 });

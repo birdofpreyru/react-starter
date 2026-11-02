@@ -50,13 +50,19 @@ test('Passes basic tests', async () => {
   // TODO: The first argument captures the Webpack config read by the server,
   // which is unstable (might not exist in the local development / test environment,
   // includes a bunch of machine-specific absolute paths).
-  mServer.mock.calls[0]![0] = {};
+  const [firstCall] = mServer.mock.calls;
+  if (!firstCall) throw Error('The mock server factory has not been called');
 
-  expect(mServer.mock.calls[0]).toMatchSnapshot();
-  const [, options] = mServer.mock.calls[0]!;
-  const { beforeRender } = options!;
+  firstCall[0] = {};
+  expect(firstCall).toMatchSnapshot();
+  const [, options] = firstCall;
+  if (!options) throw Error('Missing options');
+
+  const { beforeRender } = options;
+  if (!beforeRender) throw Error('Missing beforeRender()');
+
   expect(() => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-argument
-    void beforeRender!({ headers: {} } as any, {});
+    void beforeRender({ headers: {} } as any, {});
   }).not.toThrow();
 });
